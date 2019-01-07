@@ -7,214 +7,208 @@ using UnityEngine.UI;
 
 public class HybridController : MonoBehaviour {
 
-	private GameObject SelectedObject;
-	public Image target;
+    public enum AppState
+    {
+        NONE,
+        ADD,
+        AUTORING,
+        EDIT,
+        /*
+         NONE =0
+         ADD =1
+         AUTORING =2
+         EDIT =3
+         * */
+    }
+    private AppState currState;
+    private GameObject sObject;
+    private TranslationAndIntial traAIni;
+    private OrientationControl orienCont;
 
-	private float minPitcgDis = 15f;
-	private float minAngle = 10f;
+    public GameObject crossHairObj;
+    public GameObject objCenterIn2D;
+    public GameObject confirmButton;
 
-	private Vector2 t1PrevPos;
-	private Vector2 t2PrevPos;
-	private Vector2 prevDir;
-	private Vector2 currentDir;
+    private int nFinger;
+    private float rayDis;
+    private bool isObjectVerticalToG;
 
-	float prevMagnitude;
-	float cMagnitude;
-	float diffMagnitude;
+    private Touch touch1;
+    private Touch touch2;
 
+    private Vector2 t1PrevPos;
+    private Vector2 t2PrevPos;
+    private Vector2 prevDir;
+    private Vector2 currentDir;
+    float prevMagnitude;
+    float cMagnitude;
+    float diffMagnitude;
+    private float minPitcgDis = 10f;
 
+    void Start () {
+        currState = AppState.NONE;
+        traAIni = (TranslationAndIntial)gameObject.GetComponent(typeof(TranslationAndIntial));
+        orienCont = (OrientationControl)gameObject.GetComponent(typeof(OrientationControl));
+    }
 
-	private Vector3 rayEnd;
-	private float rayDis;
-	private Ray ray;
-	private bool setUp;
-	//private ObjectController OBJCScript;
+    public void ChangeState(int i)
+    {
+        currState = (AppState)i;
+    }
 
-	private bool startCheck;
-	private GameObject targetObject;
-
-	public Text timerText;
-	private float timerCount;
-	private int count;
-
-	// Use this for initialization
-	void Start () {
-
-		//OBJCScript = (ObjectController)gameObject.GetComponent(typeof(ObjectController));
-	}
-	void OnEnable(){
-		Debug.Log ("Wake up");
-		setUp = false;
-		startCheck = false;
-		count = 0;
-		timerCount = 0;
-	}
-
-
+   
 	// Update is called once per frame
 	void Update () {
 
-		/*
-		if (SelectedObject == null) {
-			return;
-		}*/
-		/*
-		if (startCheck) {
-			timerCount += Time.deltaTime;
-		}
-		*/
-		if (SelectedObject != null) {
-			DeviceMovement ();
-
-			if(startCheck){
-				timerCount += Time.deltaTime;
-				TestChecking ();
-				if(count >= 4){
-					TriggerChecking (false);
-				}
-			}
-		}
-
-		if (Input.touchCount > 0) {
-
-			var touch = Input.GetTouch (0);
-
-			if (EventSystem.current.IsPointerOverGameObject (touch.fingerId)) {
-				return;
-			}
-
-			if (setUp) {
-				//Debug.Log("SETUP YESSSS  :"+setUp.ToString());
-				if (SelectedObject == null) {
-					return;
-				}
-
-				if (Input.touchCount == 1) {
-					Debug.Log ("1 Touch");
-
-					if (touch.phase == TouchPhase.Moved) {
-						if (Mathf.Abs (touch.deltaPosition.x) >= 2.3f) {
-							SelectedObject.transform.RotateAround (SelectedObject.transform.position, Camera.main.transform.up,
-								touch.deltaPosition.x * 17.0f * Time.deltaTime * -1);
-						}
-
-						if (Mathf.Abs (touch.deltaPosition.y) >= 2.3f) {
-							//selectedObject.transform.Rotate (Camera.main.transform.up,touch.deltaPosition.y*rotaSpeed*Time.deltaTime);
-							SelectedObject.transform.RotateAround (SelectedObject.transform.position, Camera.main.transform.right,
-								touch.deltaPosition.y * 17.0f * Time.deltaTime);
-						}
-
-					}
 
 
-				} else if (Input.touchCount == 2) {
-					var touch2 = Input.GetTouch (1);
+        if (Input.touchCount > 0)
+        {
+            nFinger = Input.touchCount;
+            if (nFinger > 0)
+            {
+                touch1 = Input.GetTouch(0);
 
-					 t1PrevPos = touch.position - touch.deltaPosition;
-					t2PrevPos = touch2.position - touch2.deltaPosition;
+                if (EventSystem.current.IsPointerOverGameObject(touch1.fingerId))
+                {
+                    return;
+                }
 
-					prevMagnitude = (t1PrevPos - t2PrevPos).magnitude;
-					cMagnitude = (touch.position - touch2.position).magnitude;
+                switch (currState)
+                {
+                    case AppState.NONE:
+                        {
 
-					diffMagnitude = (prevMagnitude - cMagnitude);
-					//print (diffMagnitude);
+                            break;
+                        }
+                    case AppState.ADD:
+                        {
+                            if (touch1.phase == TouchPhase.Began)
+                            {
 
-					if (Mathf.Abs (diffMagnitude) >= minPitcgDis) {
-						rayDis += diffMagnitude * 0.0009f;
-						//Pitch finger
-					} else {
+                                SelectedObject(traAIni.ObjectInstantiate(touch1));
+                                SetInitialOrientation();
+                                confirmButton.SetActive(true);
+                                ChangeState(2);
+                            }
+                            break;
+                        }
+                    case AppState.AUTORING:
+                        {
+                            if (touch1.phase == TouchPhase.Began || touch1.phase == TouchPhase.Moved)
+                            {
+                                var tmpTouch = touch1.position;
+                                tmpTouch.y += 100;
+                                sObject.transform.position = traAIni.GetRealWorldPos(tmpTouch);
+                            }
+                            break;
+                        }
+                    case AppState.EDIT:
+                        {
+                            if (nFinger == 1)
+                            {
+                                if (Mathf.Abs(touch1.deltaPosition.x) >= 2.3f)
+                                {
+                                    sObject.transform.RotateAround(sObject.transform.position, Camera.main.transform.up,
+                                        touch1.deltaPosition.x * 17.0f * Time.deltaTime * -1);
+                                }
 
-						prevDir = t2PrevPos - t1PrevPos;
-						currentDir = touch2.position - touch.position;
-						float angle = Vector2.Angle (prevDir, currentDir);
-						Vector3 LR = Vector3.Cross (prevDir, currentDir);
-						//if (Mathf.Abs(angle) >= minAngle) {
+                                if (Mathf.Abs(touch1.deltaPosition.y) >= 2.3f)
+                                {
 
-						if (LR.z > 0) {
-							SelectedObject.transform.RotateAround (SelectedObject.transform.position, Camera.main.transform.forward,
-								angle*8f);
-						} else {
-							SelectedObject.transform.RotateAround (SelectedObject.transform.position, Camera.main.transform.forward,
-								-angle*8f);
-						}
-					}
+                                    sObject.transform.RotateAround(sObject.transform.position, Camera.main.transform.right,
+                                        touch1.deltaPosition.y * 17.0f * Time.deltaTime);
+                                }
+                            }
+                            else
+                            {
+                                touch2 = Input.GetTouch(1);
 
-				}
-			} else if(!setUp){
-				if (touch.phase == TouchPhase.Began) {
-					//OBJCScript.CreateObjectNotSlidAR(touch);
-					//GameObject tmptargetObject = OBJCScript.ReturnCreatedObject ();
-					//targetObject = OBJCScript.ReturnCreatedObject ().transform.GetChild (0).gameObject;
-					//SetupState (true);
-					//Debug.Log("SETUP NOOOO :"+setUp.ToString());
-					setUp = true;
-				}
-			}
+                                //Debug.Log ("2Finger distance: "+ Mathf.Abs(Vector2.Distance(touch1.position,touch2.position) ));
 
-		}
+                                if (touch1.phase == TouchPhase.Moved)
+                                {
+                                    t1PrevPos = touch1.position - touch1.deltaPosition;
+                                    t2PrevPos = touch2.position - touch2.deltaPosition;
 
-	}
-	/*
-	public void SetupState(bool b){
-		setUp = b;
-	}*/
+                                    prevMagnitude = (t1PrevPos - t2PrevPos).magnitude;
+                                    cMagnitude = (touch1.position - touch2.position).magnitude;
+                                    diffMagnitude = (prevMagnitude - cMagnitude);
+                                        //print (diffMagnitude);
+                                    
+                                    if (Mathf.Abs (diffMagnitude) >= minPitcgDis) {
+                                        Debug.Log ("Scale : "+ (diffMagnitude * 0.003f));
+                                        rayDis += diffMagnitude;
+                                            //sObject.transform.localScale *= diffMagnitude * 0.00005f;
+                                            //Pitch finger
+                                    }
+                                    else {
 
-	public void SetSelectedObject(GameObject go){
-		SelectedObject = go;
+                                        prevDir = t2PrevPos - t1PrevPos;
+                                        currentDir = touch2.position - touch1.position;
 
-	}
-	public void ClearSelectedObject(){
-		SelectedObject = null;
-	}
+                                        sObject.transform.RotateAround(sObject.transform.position, Camera.main.transform.forward, orienCont.ZTwistGesture(prevDir, currentDir));
+                                        //sObject.transform.Rotate (Camera.main.transform.forward, orienCont.ZTwistGesture (prevDir, currentDir)*-1);
+                                    }
+                                    
+                                }
 
-	public void PickUpObject(){
-		//Debug.Log ("HELLO");
-		if (SelectedObject == null) {
-			ray = Camera.main.ScreenPointToRay (target.transform.position);
 
-			foreach (RaycastHit hit in Physics.RaycastAll(ray)) {
-				if (hit.collider.tag.Equals ("3DModel")) {
-					Debug.Log ("HIT AT POS:  "+ hit.collider.gameObject.transform.position);
-					rayDis = Vector3.Distance (Camera.main.transform.position, hit.collider.gameObject.transform.position);
-					SetSelectedObject (hit.collider.gameObject);
-					break;
-				}
-			}
-			return;
-		} else {
-			ClearSelectedObject ();
-		}
+                            }
+                            break;
+                        }
+
+                    default:
+                        break;
+                }
+            }
+
+        }
 
 	}
 
-	public void DeviceMovement(){
-		var tmpray = Camera.main.ScreenPointToRay (target.transform.position);
-		SelectedObject.transform.position = tmpray.GetPoint (rayDis);
+    private Ray ray;
 
-	}
+    private bool GetSelectedObject()
+    {
+        ray = Camera.main.ScreenPointToRay(crossHairObj.transform.position);
+        foreach (RaycastHit hit in Physics.RaycastAll(ray))
+        {
+            if (hit.collider.tag.Equals("3DModel") || hit.collider.tag.Equals("Annotation"))
+            {
+                Debug.Log("HIT !!!! :  " + hit.collider.tag);
 
-	public void TriggerChecking(bool b){
-		startCheck = b;
-		if (b) {
-			InvokeRepeating ("UpdateTimer",0.00f,0.05f);
-		} else if (!b) {
-			CancelInvoke ("UpdateTimer");
-		}
-	}
+                SelectedObject(hit.collider.gameObject);
+                rayDis = Vector3.Distance(crossHairObj.transform.position, hit.collider.gameObject.transform.position);
 
-	private float angDiff;
-	private float disDiff;
+                return true;
+            }
+        }
+        return false;
+    }
 
-	public void TestChecking(){
-		angDiff = Quaternion.Angle (SelectedObject.transform.rotation,targetObject.transform.rotation);
-		disDiff = Vector3.Distance (SelectedObject.transform.position,targetObject.transform.position);
+    public void ObjectPointToGround(bool t)
+    {
+        isObjectVerticalToG = t;
+    }
+    private void SetInitialOrientation()
+    {
 
-		if(angDiff<=12.0f /*&& disDiff<= 0.01f*/){
-			Destroy (SelectedObject);
-			count++;
-		}
-	}
-	private void UpdateTimer(){
-		timerText.text = timerCount.ToString () + " s";
-	}
+        if (!isObjectVerticalToG)
+        {
+            sObject.transform.Rotate(Vector3.right, 90f);
+        }
+    }
+
+    public void SelectedObject(GameObject selected)
+    {
+        objCenterIn2D.SetActive(true);
+        sObject = selected;
+    }
+    public void DeSelectObject()
+    {
+        objCenterIn2D.SetActive(false);
+        sObject = null;
+    }
+
 }
