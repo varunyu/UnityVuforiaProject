@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class HybridController : MonoBehaviour {
 
+    public event System.Action<bool> AnnotationIsBeingSelected;
+
+
     public enum AppState
     {
         NONE,
@@ -24,6 +27,8 @@ public class HybridController : MonoBehaviour {
     private GameObject sObject;
     private TranslationAndIntial traAIni;
     private OrientationControl orienCont;
+
+    private UIFollowObject UIFObj;
 
     public GameObject crossHairObj;
     public GameObject objCenterIn2D;
@@ -49,6 +54,7 @@ public class HybridController : MonoBehaviour {
         currState = AppState.NONE;
         traAIni = (TranslationAndIntial)gameObject.GetComponent(typeof(TranslationAndIntial));
         orienCont = (OrientationControl)gameObject.GetComponent(typeof(OrientationControl));
+        UIFObj = (UIFollowObject)objCenterIn2D.GetComponent(typeof(UIFollowObject));
     }
 
     public void ChangeState(int i)
@@ -137,7 +143,7 @@ public class HybridController : MonoBehaviour {
                                         //print (diffMagnitude);
                                     
                                     if (Mathf.Abs (diffMagnitude) >= minPitcgDis) {
-                                        Debug.Log ("Scale : "+ (diffMagnitude * 0.003f));
+                                        Debug.Log ("Scale : "+ (diffMagnitude * 0.00009f));
                                         rayDis += diffMagnitude;
                                             //sObject.transform.localScale *= diffMagnitude * 0.00005f;
                                             //Pitch finger
@@ -165,9 +171,25 @@ public class HybridController : MonoBehaviour {
 
         }
 
-	}
+        if (sObject!=null && currState == AppState.EDIT)
+        {
+            DeviceMovemnt();
+        }
+
+    }
+
+    private void DeviceMovemnt()
+    {
+        Ray tmpray = Camera.main.ScreenPointToRay(crossHairObj.transform.position);
+        sObject.transform.position = tmpray.GetPoint(rayDis);
+    }
 
     private Ray ray;
+
+    public void PickupObject()
+    {
+        GetSelectedObject();
+    }
 
     private bool GetSelectedObject()
     {
@@ -179,7 +201,7 @@ public class HybridController : MonoBehaviour {
                 Debug.Log("HIT !!!! :  " + hit.collider.tag);
 
                 SelectedObject(hit.collider.gameObject);
-                rayDis = Vector3.Distance(crossHairObj.transform.position, hit.collider.gameObject.transform.position);
+                rayDis = Vector3.Distance(Camera.main.ScreenToWorldPoint(crossHairObj.transform.position), hit.collider.gameObject.transform.position);
 
                 return true;
             }
@@ -200,15 +222,27 @@ public class HybridController : MonoBehaviour {
         }
     }
 
-    public void SelectedObject(GameObject selected)
+    private void SelectedObject(GameObject selected)
     {
         objCenterIn2D.SetActive(true);
         sObject = selected;
+        UIFObj.SetObjectToFollow(selected);
+        if (AnnotationIsBeingSelected != null)
+        {
+            AnnotationIsBeingSelected(true);
+        }
+        ChangeState(3);
     }
     public void DeSelectObject()
     {
         objCenterIn2D.SetActive(false);
         sObject = null;
+
+        if (AnnotationIsBeingSelected != null)
+        {
+            AnnotationIsBeingSelected(false);
+        }
+        ChangeState(0);
     }
 
 }

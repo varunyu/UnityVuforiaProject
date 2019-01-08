@@ -5,6 +5,7 @@ using UnityEngine;
 public class TranslationAndIntial : MonoBehaviour {
 
 	public GameObject parentObject;
+    public GameObject worldCoordinate;
 	private Transform emptyTran;
     public GameObject[] preFabList;
     private int preFabIndex;
@@ -28,12 +29,12 @@ public class TranslationAndIntial : MonoBehaviour {
 
     public GameObject ObjectInstantiate(Touch t,GameObject prefab){
 		//emptyTran = ARKitHitScript.HitLoc (t);
-		return (Instantiate (prefab, GetPosFrom2DTouch(t), parentObject.transform.rotation, parentObject.transform));
+		return (Instantiate (prefab, GetPosFrom2DTouch(t), worldCoordinate.transform.rotation, parentObject.transform));
 	}
 
     public GameObject ObjectInstantiate(Touch t)
     {
-        return (Instantiate(preFabList[preFabIndex], GetPosFrom2DTouch(t), parentObject.transform.rotation, parentObject.transform));
+        return (Instantiate(preFabList[preFabIndex], GetPosFrom2DTouch(t), worldCoordinate.transform.rotation, parentObject.transform));
     }
 
 

@@ -6,7 +6,10 @@ using UnityEngine.UI;
 
 public class SlidARPPController : MonoBehaviour {
 
-	public enum AppState{
+    public event System.Action<bool> AnnotationIsBeingSelected;
+
+
+    public enum AppState{
 		NONE,
 		ADD,
 		AUTORING,
@@ -156,15 +159,20 @@ public class SlidARPPController : MonoBehaviour {
 				{
 					if (nFinger == 1) {
 
-						sObject.transform.RotateAround (sObject.transform.position,orienCont.GetGravityVector(),
+                            /*
+					        sObject.transform.RotateAround (sObject.transform.position,orienCont.GetGravityVector(),
 							touch1.deltaPosition.x * 17.0f * Time.deltaTime);
-						/*
-						if (Mathf.Abs (touch1.deltaPosition.x) > Mathf.Abs (touch1.deltaPosition.y)) {
-							sObject.transform.Rotate (Camera.main.transform.up,orienCont.ARCBALLX(touch1));
-						} else {
-							sObject.transform.Rotate (Camera.main.transform.right, orienCont.ARCBALLY (touch1));
-						}*/
-					} else {
+							*/
+                            sObject.transform.RotateAround(sObject.transform.position, Vector3.down,
+                            touch1.deltaPosition.x * 17.0f * Time.deltaTime);
+
+                            /*
+                            if (Mathf.Abs (touch1.deltaPosition.x) > Mathf.Abs (touch1.deltaPosition.y)) {
+                                sObject.transform.Rotate (Camera.main.transform.up,orienCont.ARCBALLX(touch1));
+                            } else {
+                                sObject.transform.Rotate (Camera.main.transform.right, orienCont.ARCBALLY (touch1));
+                            }*/
+                        } else {
 						touch2 = Input.GetTouch (1);
 
 						//Debug.Log ("2Finger distance: "+ Mathf.Abs(Vector2.Distance(touch1.position,touch2.position) ));
@@ -263,11 +271,20 @@ public class SlidARPPController : MonoBehaviour {
         objCenterIn2D.SetActive(true);
         UIFObj.SetObjectToFollow(selected);
         sObject = selected;
+
+        if(AnnotationIsBeingSelected != null)
+        {
+            AnnotationIsBeingSelected(true);
+        }
     }
     public void DeSelectObject()
     {
         objCenterIn2D.SetActive(false);
         sObject = null;
+        if (AnnotationIsBeingSelected != null)
+        {
+            AnnotationIsBeingSelected(false);
+        }
     }
 
     private Ray ray;
