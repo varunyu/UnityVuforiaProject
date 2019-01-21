@@ -261,7 +261,7 @@ public class SlidARPPController : MonoBehaviour {
 	public void ChangeState(int i){
 		currState = (AppState)i;
 	}
-	/*
+    /*
 	private void ChangeRotation(Transform t){
 		sObject.transform.rotation = t.rotation;
 	}*/
@@ -272,9 +272,11 @@ public class SlidARPPController : MonoBehaviour {
         UIFObj.SetObjectToFollow(selected);
         sObject = selected;
 
-        if(AnnotationIsBeingSelected != null)
-        {
-            AnnotationIsBeingSelected(true);
+        if (currState != AppState.AUTORING) {
+            if (AnnotationIsBeingSelected != null)
+            {
+                AnnotationIsBeingSelected(true);
+            }
         }
     }
     public void DeSelectObject()

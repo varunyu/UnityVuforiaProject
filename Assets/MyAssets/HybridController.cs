@@ -143,8 +143,8 @@ public class HybridController : MonoBehaviour {
                                         //print (diffMagnitude);
                                     
                                     if (Mathf.Abs (diffMagnitude) >= minPitcgDis) {
-                                        Debug.Log ("Scale : "+ (diffMagnitude * 0.00009f));
-                                        rayDis += diffMagnitude;
+                                        //Debug.Log ("Scale : "+ (diffMagnitude * 0.00009f));
+                                        //rayDis += diffMagnitude * 0.00009f;
                                             //sObject.transform.localScale *= diffMagnitude * 0.00005f;
                                             //Pitch finger
                                     }
@@ -227,9 +227,12 @@ public class HybridController : MonoBehaviour {
         objCenterIn2D.SetActive(true);
         sObject = selected;
         UIFObj.SetObjectToFollow(selected);
-        if (AnnotationIsBeingSelected != null)
-        {
-            AnnotationIsBeingSelected(true);
+
+        if (currState != AppState.AUTORING) {
+            if (AnnotationIsBeingSelected != null)
+            {
+                AnnotationIsBeingSelected(true);
+            }
         }
         ChangeState(3);
     }

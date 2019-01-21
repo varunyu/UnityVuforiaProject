@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class TargetWithEvents : MonoBehaviour
 {
-    public static event Action OnTargetAlignedWithAnnotation;
+    public event Action OnTargetAlignedWithAnnotation;
+    public event Action<bool> UpdatePOSIndicator;
+    public event Action<bool> UpdateROTIndicator;
 
     private bool isCollider;
     private GameObject colliderObject;
@@ -65,6 +67,16 @@ public class TargetWithEvents : MonoBehaviour
 
     private bool CheckPos()
     {
+        if(UpdatePOSIndicator!= null)
+        {
+            UpdatePOSIndicator(CheckTranslation());
+        }
+        if (UpdateROTIndicator != null)
+        {
+            UpdateROTIndicator(CheckOrientation());
+        }
+
+
         if (CheckTranslation()&& CheckOrientation())
         {
             return true;
@@ -74,7 +86,7 @@ public class TargetWithEvents : MonoBehaviour
 
     private bool CheckTranslation()
     {
-        if (Vector3.Distance(colliderObject.transform.position,this.transform.position) <= 0.01f )
+        if (Vector3.Distance(colliderObject.transform.position,this.transform.position) <= 0.03f )
         {
             return true;
         }
