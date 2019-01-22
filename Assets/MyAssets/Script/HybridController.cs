@@ -9,6 +9,8 @@ public class HybridController : MonoBehaviour {
 
     public event System.Action<bool> AnnotationIsBeingSelected;
 
+    [SerializeField]
+    private GameObject HybridUI;
 
     public enum AppState
     {
@@ -62,9 +64,18 @@ public class HybridController : MonoBehaviour {
         currState = (AppState)i;
     }
 
-   
-	// Update is called once per frame
-	void Update () {
+    private void OnEnable()
+    {
+        HybridUI.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        HybridUI.SetActive(false);
+    }
+
+    // Update is called once per frame
+    void Update () {
 
 
 

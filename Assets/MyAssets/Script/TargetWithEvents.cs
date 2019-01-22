@@ -63,7 +63,20 @@ public class TargetWithEvents : MonoBehaviour
     {
         isCollider = false;
         colliderObject = null;
+
+        if (UpdatePOSIndicator != null)
+        {
+            UpdatePOSIndicator(false);
+        }
+        if (UpdateROTIndicator != null)
+        {
+            UpdateROTIndicator(false);
+        }
+
     }
+
+
+
 
     private bool CheckPos()
     {

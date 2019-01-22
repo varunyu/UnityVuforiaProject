@@ -8,6 +8,8 @@ public class SlidARPPController : MonoBehaviour {
 
     public event System.Action<bool> AnnotationIsBeingSelected;
 
+    [SerializeField]
+    private GameObject SlidARUI;
 
     public enum AppState{
 		NONE,
@@ -55,8 +57,18 @@ public class SlidARPPController : MonoBehaviour {
         UIFObj = (UIFollowObject)objCenterIn2D.GetComponent(typeof(UIFollowObject));
 
     }
-	// Use this for initialization
-	void Start () {
+
+    private void OnEnable()
+    {
+        SlidARUI.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        SlidARUI.SetActive(false);
+    }
+    // Use this for initialization
+    void Start () {
 		
 	}
 
