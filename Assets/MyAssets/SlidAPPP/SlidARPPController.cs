@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class SlidARPPController : MonoBehaviour {
 
     public event System.Action<bool> AnnotationIsBeingSelected;
+    public event System.Action<bool> InteractInAuthoringMode;
 
     [SerializeField]
     private GameObject SlidARUI;
@@ -133,8 +134,18 @@ public class SlidARPPController : MonoBehaviour {
 				}
 			case AppState.AUTORING:
 				{
-					if (touch1.phase == TouchPhase.Began || touch1.phase == TouchPhase.Moved) {
-						var tmpTouch = touch1.position;
+					if (touch1.phase == TouchPhase.Began || touch1.phase == TouchPhase.Moved) 
+                    {
+                            if (touch1.phase == TouchPhase.Began)
+                            {
+                                EventSystemInteractInAthoringMode(true);
+                            }
+                            else if (touch1.phase == TouchPhase.Ended)
+                            {
+                                EventSystemInteractInAthoringMode(false);
+                            }
+
+                        var tmpTouch = touch1.position;
 						tmpTouch.y += 100;
 						sObject.transform.position = traAIni.GetRealWorldPos (tmpTouch);
 					}
@@ -284,43 +295,59 @@ public class SlidARPPController : MonoBehaviour {
         UIFObj.SetObjectToFollow(selected);
         sObject = selected;
 
+        /*
         if (currState != AppState.AUTORING) {
             if (AnnotationIsBeingSelected != null)
             {
                 AnnotationIsBeingSelected(true);
             }
-        }
+        }*/
     }
     public void DeSelectObject()
     {
         objCenterIn2D.SetActive(false);
         sObject = null;
-        if (AnnotationIsBeingSelected != null)
-        {
-            AnnotationIsBeingSelected(false);
-        }
+        EventSystemAnnotationBeingSelected(false);
+        
     }
 
     private Ray ray;
 	private bool GetSelectedObject(Touch t){
+
 		ray = Camera.main.ScreenPointToRay (t.position);
 		foreach (RaycastHit hit in Physics.RaycastAll(ray)) {
 			if (hit.collider.tag.Equals ("3DModel") || hit.collider.tag.Equals ("Annotation")) {
-				Debug.Log ("HIT !!!! :  "+ hit.collider.tag);
-				//OBJCScript.SetSelectedObject (hit.collider.gameObject);	
-				//ChangeAppState (2);
-				//sObject = hit.collider.gameObject;
+			
                 SelectedObject(hit.collider.gameObject);
                 oInfo = (ObjectInfo)sObject.GetComponent(typeof(ObjectInfo));
 				PrepareSlidARData ();
-
-				return true;
+                EventSystemAnnotationBeingSelected(true);
+                return true;
 			}
 		}
 		return false;
 	}
 
 	public void RemoveOjbect(){
-		Destroy (sObject);
+
+        DeSelectObject();
+        Destroy (sObject);
 	}
+
+    private void EventSystemAnnotationBeingSelected(bool t)
+    {
+        if (AnnotationIsBeingSelected != null)
+        {
+            AnnotationIsBeingSelected(t);
+        }
+
+    }
+
+    private void EventSystemInteractInAthoringMode(bool t)
+    {
+        if (InteractInAuthoringMode != null)
+        {
+            InteractInAuthoringMode(t);
+        }
+    }
 }

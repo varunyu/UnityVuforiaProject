@@ -6,9 +6,18 @@ using UnityEngine.UI;
 
 public class UserStudyScript: MonoBehaviour
 {
+    [SerializeField]
     private int count;
-    private bool timerOn;
-    private float timer;
+    [SerializeField]
+    private int maxNumberOfTarget;
+
+    private bool editModeTimerOn;
+    private float editModeTimer;
+
+    private bool authoringModeTimerOn;
+    private float authoringModeTimer;
+
+    private float deviceMovementDistance;
 
     public GameObject SlidARPP;
     public GameObject Hybrid;
@@ -39,12 +48,14 @@ public class UserStudyScript: MonoBehaviour
         if (currentSystem ==0)
         {
             slidARScript = (SlidARPPController)SlidARPP.GetComponent(typeof(SlidARPPController));
-            slidARScript.AnnotationIsBeingSelected += EnableTimer;
+            slidARScript.AnnotationIsBeingSelected += EnableEditModeTimer;
+
         }
         else
         {
             hybridScript = (HybridController)Hybrid.GetComponent(typeof(HybridController));
-            hybridScript.AnnotationIsBeingSelected += EnableTimer;
+            hybridScript.AnnotationIsBeingSelected += EnableEditModeTimer;
+            hybridScript.InteractInAuthoringMode += EnableAuthoringModeTimer;
         }
         //timer = 0f;
         //TargetWithEvents.OnTargetAlignedWithAnnotation += TargetObjectIsAlignedWithAnnotation;
@@ -55,8 +66,8 @@ public class UserStudyScript: MonoBehaviour
 
     public void StartUserStudy(int targetGroup)
     {
-        timer = 0f;
-        count = 0;
+        ResetUserStudy();
+
         listsNumber = targetGroup;
         targetListsNumber[listsNumber].SetActive(true);
         userstudyBegin = true;
@@ -84,6 +95,10 @@ public class UserStudyScript: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+    }
+    private void FixedUpdate()
+    {
         if (userstudyBegin)
         {
             RunningUserStudy();
@@ -92,36 +107,68 @@ public class UserStudyScript: MonoBehaviour
 
     private void RunningUserStudy()
     {
-        if (count < 5)
+        if (count < maxNumberOfTarget)
         {
-            if (timerOn)
+            if (editModeTimerOn)
             {
-                timer += Time.deltaTime;
+                editModeTimer += Time.deltaTime;
+                timerText.GetComponent<Text>().text = editModeTimer.ToString("F2") + " S";
 
-                timerText.GetComponent<Text>().text = timer.ToString("F2") + " S";
+                MeasureDeviceMovement();
+
+            }
+            if (authoringModeTimerOn)
+            {
+                authoringModeTimer += Time.deltaTime;
             }
         }
     }
 
+    private float elapsedTime = 0f;
+    private float setElapsedTime = 1;
+    private Vector3 prevDevicePos;
+    private void MeasureDeviceMovement()
+    {
+        elapsedTime += Time.deltaTime;
+        if (elapsedTime >= setElapsedTime)
+        {
+            if (deviceMovementDistance > 0.0f)
+            {
+                deviceMovementDistance += Vector3.Distance(prevDevicePos, Camera.main.transform.position);
+            }
+            prevDevicePos = Camera.main.transform.position;
+            elapsedTime = 0;
+        }
+
+    }
+
     public void ResetUserStudy()
     {
+       
+        editModeTimer = 0f;
         count = 0;
-        timer = 0f;
+        deviceMovementDistance = 0f;
+        authoringModeTimer = 0f;
     }
 
     private void TargetObjectIsAlignedWithAnnotation()
     {
         Debug.Log("Correct!!!!");
         count++;
-        if (count < 5)
+        if (count < maxNumberOfTarget)
         {
             EnableTargetObject(count);
         }
     }
 
-    private void EnableTimer(bool b)
+    private void EnableAuthoringModeTimer(bool b)
     {
-        timerOn = b;
+        authoringModeTimerOn = b;
+    }
+
+    private void EnableEditModeTimer(bool b)
+    {
+        editModeTimerOn = b;
     }
 
 }

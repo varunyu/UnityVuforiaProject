@@ -30,8 +30,8 @@ public class SimpleDepthClue : MonoBehaviour
         lr.startColor = Color.red;
         lr.endColor = Color.red;
         */      
-        lr.startWidth = 0.005f;
-        lr.endWidth = 0.005f;
+        lr.startWidth = 0.1f;
+        lr.endWidth = 0.1f;
         lr.positionCount = 2;
         lr.SetPosition(0, gameObject.transform.position);
         lr.SetPosition(1, shadowPlane.transform.position);

@@ -97,19 +97,29 @@ public class TargetWithEvents : MonoBehaviour
         else return false;
     }
 
+    private float timer = 0;
+    private float delayTime = 1.0f;
+    private float minDis = 3f;
     private bool CheckTranslation()
     {
-        if (Vector3.Distance(colliderObject.transform.position,this.transform.position) <= 0.03f )
+        if (Vector3.Distance(colliderObject.transform.position,this.transform.position) <= minDis)
         {
-            return true;
+            timer += Time.deltaTime;
+            if (timer >= delayTime)
+            {
+                timer = 0;
+                return true;
+            }
+            return false;
         }
 
         return false;
     }
 
+    private float minRot = 12f;
     private bool CheckOrientation()
     {
-        if (Quaternion.Angle(colliderObject.transform.rotation, this.transform.rotation) <= 12f)
+        if (Quaternion.Angle(colliderObject.transform.rotation, this.transform.rotation) <= minRot)
         {
             return true;
         }

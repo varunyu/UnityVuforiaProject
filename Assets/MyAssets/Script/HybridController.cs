@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class HybridController : MonoBehaviour {
 
     public event System.Action<bool> AnnotationIsBeingSelected;
+    public event System.Action<bool> InteractInAuthoringMode;
 
     [SerializeField]
     private GameObject HybridUI;
@@ -114,6 +115,15 @@ public class HybridController : MonoBehaviour {
                         {
                             if (touch1.phase == TouchPhase.Began || touch1.phase == TouchPhase.Moved)
                             {
+                                if (touch1.phase == TouchPhase.Began)
+                                {
+                                    InteractInAuthoringMode(true);
+                                }
+                                else if (touch1.phase == TouchPhase.Ended)
+                                {
+                                    InteractInAuthoringMode(false);
+                                }
+
                                 var tmpTouch = touch1.position;
                                 tmpTouch.y += 100;
                                 sObject.transform.position = traAIni.GetRealWorldPos(tmpTouch);
@@ -199,10 +209,10 @@ public class HybridController : MonoBehaviour {
 
     public void PickupObject()
     {
-        GetSelectedObject();
+        GetPickupObject();
     }
 
-    private bool GetSelectedObject()
+    private bool GetPickupObject()
     {
         ray = Camera.main.ScreenPointToRay(crossHairObj.transform.position);
         foreach (RaycastHit hit in Physics.RaycastAll(ray))
@@ -213,6 +223,16 @@ public class HybridController : MonoBehaviour {
 
                 SelectedObject(hit.collider.gameObject);
                 rayDis = Vector3.Distance(Camera.main.ScreenToWorldPoint(crossHairObj.transform.position), hit.collider.gameObject.transform.position);
+
+                EventSystemAnnotationBeingSelected(false);
+                /*
+                if (currState != AppState.AUTORING) {
+                    if (AnnotationIsBeingSelected != null)
+                    {
+                        AnnotationIsBeingSelected(true);
+                    }
+                }*/
+                ChangeState(3);
 
                 return true;
             }
@@ -233,30 +253,45 @@ public class HybridController : MonoBehaviour {
         }
     }
 
+    
+
     private void SelectedObject(GameObject selected)
     {
         objCenterIn2D.SetActive(true);
         sObject = selected;
         UIFObj.SetObjectToFollow(selected);
 
-        if (currState != AppState.AUTORING) {
-            if (AnnotationIsBeingSelected != null)
-            {
-                AnnotationIsBeingSelected(true);
-            }
-        }
-        ChangeState(3);
+
     }
     public void DeSelectObject()
     {
         objCenterIn2D.SetActive(false);
         sObject = null;
 
+        EventSystemAnnotationBeingSelected(false);
+        /*
         if (AnnotationIsBeingSelected != null)
         {
             AnnotationIsBeingSelected(false);
-        }
+        }*/
         ChangeState(0);
+    }
+
+    private void EventSystemAnnotationBeingSelected(bool t)
+    {
+        if (AnnotationIsBeingSelected != null)
+        {
+            AnnotationIsBeingSelected(t);
+        }
+
+    }
+
+    private void EventSystemTimeInAthoringMode(bool t)
+    {
+        if(InteractInAuthoringMode != null)
+        {
+            InteractInAuthoringMode(t);
+        }
     }
 
 }
