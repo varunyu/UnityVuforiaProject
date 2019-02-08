@@ -24,8 +24,11 @@ public class UserStudyScript: MonoBehaviour
     private SlidARPPController slidARScript;
     private HybridController hybridScript;
     private UserStudyUI userstudyUI;
+    private DDAS dDAS;
 
-    public GameObject timerText;
+    public GameObject edit_Mode_timerText;
+    public GameObject authoring_Mode_timerText;
+    public GameObject device_Mov_DisText;
     // slidAR = 0;
     // hybrid = 1;
     [SerializeField]
@@ -44,6 +47,7 @@ public class UserStudyScript: MonoBehaviour
     void Start()
     {
         userstudyUI = (UserStudyUI)gameObject.GetComponent<UserStudyUI>();
+        dDAS = (DDAS)gameObject.GetComponent<DDAS>();
 
         if (currentSystem ==0)
         {
@@ -62,6 +66,8 @@ public class UserStudyScript: MonoBehaviour
         //count = 0;
 
         //targetListsNumber[listsNumber].SetActive(true);
+        //dDAS.SetupData(maxNumberOfTarget);
+        StartUserStudy(0);
     }
 
     public void StartUserStudy(int targetGroup)
@@ -72,16 +78,16 @@ public class UserStudyScript: MonoBehaviour
         targetListsNumber[listsNumber].SetActive(true);
         userstudyBegin = true;
         EnableTargetObject(0);
+
+        maxNumberOfTarget = targetListsNumber[listsNumber].transform.childCount - 1;
+        dDAS.SetupData(maxNumberOfTarget);
     }
 
     private void EnableTargetObject(int i)
     {
         if (i != 0)
         {
-            currentTarget.GetComponent<TargetWithEvents>().OnTargetAlignedWithAnnotation -= TargetObjectIsAlignedWithAnnotation;
-            userstudyUI.ClearAll();
-            currentTarget.SetActive(false);
-            currentTarget = null;
+            DisableCurrentTarget();
         }
 
         currentTarget = targetListsNumber[listsNumber].transform.GetChild(i).gameObject;
@@ -90,6 +96,13 @@ public class UserStudyScript: MonoBehaviour
         userstudyUI.RegisterNewListenser(currentTarget);
     }
 
+    private void DisableCurrentTarget()
+    {
+        currentTarget.GetComponent<TargetWithEvents>().OnTargetAlignedWithAnnotation -= TargetObjectIsAlignedWithAnnotation;
+        userstudyUI.ClearAll();
+        currentTarget.SetActive(false);
+        currentTarget = null;
+    }
 
 
     // Update is called once per frame
@@ -112,7 +125,7 @@ public class UserStudyScript: MonoBehaviour
             if (editModeTimerOn)
             {
                 editModeTimer += Time.deltaTime;
-                timerText.GetComponent<Text>().text = editModeTimer.ToString("F2") + " S";
+                edit_Mode_timerText.GetComponent<Text>().text = editModeTimer.ToString("F2") + " S";
 
                 MeasureDeviceMovement();
 
@@ -120,6 +133,7 @@ public class UserStudyScript: MonoBehaviour
             if (authoringModeTimerOn)
             {
                 authoringModeTimer += Time.deltaTime;
+                authoring_Mode_timerText.GetComponent<Text>().text = authoringModeTimer.ToString("F2") + " S";
             }
         }
     }
@@ -132,43 +146,86 @@ public class UserStudyScript: MonoBehaviour
         elapsedTime += Time.deltaTime;
         if (elapsedTime >= setElapsedTime)
         {
-            if (deviceMovementDistance > 0.0f)
+            if(prevDevicePos != null || (Vector3.Distance(prevDevicePos, Camera.main.transform.position)>=1f))
             {
                 deviceMovementDistance += Vector3.Distance(prevDevicePos, Camera.main.transform.position);
             }
+            /*
+            if (deviceMovementDistance > 0.0f)
+            {
+                deviceMovementDistance += Vector3.Distance(prevDevicePos, Camera.main.transform.position);
+            }*/
             prevDevicePos = Camera.main.transform.position;
             elapsedTime = 0;
+            device_Mov_DisText.GetComponent<Text>().text = deviceMovementDistance.ToString("F2") + " cm";
         }
 
     }
 
     public void ResetUserStudy()
     {
-       
-        editModeTimer = 0f;
         count = 0;
+        editModeTimer = 0f;
         deviceMovementDistance = 0f;
         authoringModeTimer = 0f;
     }
 
-    private void TargetObjectIsAlignedWithAnnotation()
+    public void TargetObjectIsAlignedWithAnnotation()
     {
-        Debug.Log("Correct!!!!");
+        //Debug.Log("Correct!!!!");
+
+
+        SaveCurrentData();
+        editModeTimer = 0f;
+        deviceMovementDistance = 0f;
+        authoringModeTimer = 0f;
+        /*
         count++;
         if (count < maxNumberOfTarget)
         {
             EnableTargetObject(count);
+        }*/
+        if (!IsFinish())
+        {
+
+            EnableTargetObject(count);
+        }
+        else
+        {
+            Debug.Log("Finish!!!!");
+            DisableCurrentTarget();
+            dDAS.UploadDataToInternet();
         }
     }
 
-    private void EnableAuthoringModeTimer(bool b)
+    private bool IsFinish()
+    {
+        count++;
+        if(count+1 <= maxNumberOfTarget)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    private void SaveCurrentData()
+    {
+        dDAS.SaveTrialData(authoringModeTimer, editModeTimer, deviceMovementDistance,count);
+    }
+    
+
+    public void EnableAuthoringModeTimer(bool b)
     {
         authoringModeTimerOn = b;
     }
 
-    private void EnableEditModeTimer(bool b)
+    public void EnableEditModeTimer(bool b)
     {
         editModeTimerOn = b;
     }
+
 
 }
