@@ -23,19 +23,52 @@ public class UserStudyMainScene : MonoBehaviour
     /// 5 = Target_Not_Aligned_World_Not
     /// 
     [SerializeField]
-    private int ChosenStage; 
+    private int ChosenTarget;
 
+    /*[SerializeField]
+    private int ChosenWorldCoor;
+    */
 
     public void SetChosenMethod(int i)
     {
         ChosenMethod = i;
+        PlayerPrefs.DeleteKey("ChosenSystem");
         PlayerPrefs.SetInt("ChosenSystem",ChosenMethod);
     }
 
-    public void SetChosenStage(int i)
+    public void SetChosenStage(int Stage)
     {
-        ChosenStage = i;
-        PlayerPrefs.SetInt("ChosenStage",ChosenStage);
+        PlayerPrefs.DeleteKey("WorldCoor");
+        PlayerPrefs.DeleteKey("TargetGroup");
+
+        if (Stage>=4)
+        {
+            PlayerPrefs.SetInt("WorldCoor", 1);
+
+            if (Stage == 4)
+            {
+                PlayerPrefs.SetInt("TargetGroup", 2);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("TargetGroup", 3);
+            }
+
+        }
+        else
+        {
+            PlayerPrefs.SetInt("WorldCoor", 0);
+
+            PlayerPrefs.SetInt("TargetGroup", Stage);
+        }
+
+
+
+        /*
+        ChosenTarget = targetGroup;
+        PlayerPrefs.SetInt("TargetGroup", ChosenTarget);
+        */
+
     }
 
     public void LoadUserStudyScenes()

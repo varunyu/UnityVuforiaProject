@@ -66,7 +66,10 @@ public class SlidARPPController : MonoBehaviour {
 
     private void OnDisable()
     {
-        SlidARUI.SetActive(false);
+        if (SlidARUI != null)
+        {
+            SlidARUI.SetActive(false);
+        }
     }
     // Use this for initialization
     void Start () {
@@ -129,6 +132,8 @@ public class SlidARPPController : MonoBehaviour {
 						SetInitialOrientation ();
 						confirmButton.SetActive (true);
 						ChangeState (2);
+                        
+                        EventSystemInteractInAthoringMode(true);
 					}
 					break;
 				}
@@ -140,16 +145,17 @@ public class SlidARPPController : MonoBehaviour {
                             {
                                 EventSystemInteractInAthoringMode(true);
                             }
-                            else if (touch1.phase == TouchPhase.Ended)
-                            {
-                                EventSystemInteractInAthoringMode(false);
-                            }
+
 
                         var tmpTouch = touch1.position;
 						tmpTouch.y += 100;
 						sObject.transform.position = traAIni.GetRealWorldPos (tmpTouch);
 					}
-					break;
+                    else if (touch1.phase == TouchPhase.Ended || touch1.phase == TouchPhase.Canceled)
+                    {
+                        EventSystemInteractInAthoringMode(false);
+                    }
+                        break;
 				}
 			case AppState.EDIT:
 				{

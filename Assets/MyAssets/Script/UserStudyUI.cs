@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UserStudyUI : MonoBehaviour
 {
@@ -52,5 +53,10 @@ public class UserStudyUI : MonoBehaviour
     private void EnableRotIndicatorUI(bool t)
     {
         Rot_Indicator_UI.SetActive(t);
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("Main");
     }
 }

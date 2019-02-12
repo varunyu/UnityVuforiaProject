@@ -5,14 +5,27 @@ using UnityEngine;
 public class TranslationAndIntial : MonoBehaviour {
 
 	public GameObject parentObject;
-    public GameObject worldCoordinate;
-	private Transform emptyTran;
+    public GameObject tmpWorldCoordinate;
+    private GameObject worldCoordinate;
+
+    private Transform emptyTran;
     public GameObject[] preFabList;
-    private int preFabIndex;
+    private int preFabIndex =0;
 
 	void Awake(){
-		//ARKitHitScript = (ARKitHitCheck)gameObject.GetComponent(typeof(ARKitHitCheck));
-	}
+        //ARKitHitScript = (ARKitHitCheck)gameObject.GetComponent(typeof(ARKitHitCheck));
+        var stage = PlayerPrefs.GetInt("WorldCoor");
+        Debug.Log("WorldCoordi "+ stage);
+
+        if (stage == 1)
+        {
+            worldCoordinate = tmpWorldCoordinate;
+        }
+        else
+        {
+            worldCoordinate = parentObject;
+        }
+    }
 	void Start () {
 
 	}
@@ -38,9 +51,10 @@ public class TranslationAndIntial : MonoBehaviour {
     }
 
 
+    private float range = 80f;
     public Vector3 GetRealWorldPos(Vector2 t){
         ray = Camera.main.ScreenPointToRay(t);
-        return ray.GetPoint(1.3f);//ARKitHitScript.HitLoc (t).position;
+        return ray.GetPoint(range);//ARKitHitScript.HitLoc (t).position;
     }
 
 	public Vector3 GetRealWorldPos(Touch t){
@@ -49,8 +63,11 @@ public class TranslationAndIntial : MonoBehaviour {
 	private Ray ray;
 	public Vector3 GetPosFrom2DTouch(Touch t){
         ray = Camera.main.ScreenPointToRay(t.position);
-		return ray.GetPoint(2.0f);
+		return ray.GetPoint(range);
 	}
 
-
+    public void DebugObjectCreation()
+    {
+        Instantiate(preFabList[0],new Vector3(0,0,0), parentObject.transform.rotation, parentObject.transform);
+    }
 }

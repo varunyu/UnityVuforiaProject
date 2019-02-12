@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Marker.unity
     guid: 29ab2db9978654d34a06f1ff7b1e8a59
   - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: f827e84458616474888037dd68efebec
+  - enabled: 1
     path: Assets/Scenes/UserStudy.unity
     guid: 5388703bded0b4ba5b3da35503242c0a
   m_configObjects: {}

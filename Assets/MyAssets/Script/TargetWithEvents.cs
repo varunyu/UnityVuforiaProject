@@ -90,7 +90,7 @@ public class TargetWithEvents : MonoBehaviour
         }
 
 
-        if (CheckTranslation()&& CheckOrientation())
+        if (CheckTranslationWithDelay()&& CheckOrientation())
         {
             return true;
         }
@@ -98,19 +98,29 @@ public class TargetWithEvents : MonoBehaviour
     }
 
     private float timer = 0;
-    private float delayTime = 1.0f;
+    private float delayTime = 1f;
     private float minDis = 3f;
-    private bool CheckTranslation()
+    private bool CheckTranslationWithDelay()
     {
-        if (Vector3.Distance(colliderObject.transform.position,this.transform.position) <= minDis)
+        timer += Time.deltaTime;
+        if (timer >= delayTime)
         {
-            timer += Time.deltaTime;
-            if (timer >= delayTime)
+            if (Vector3.Distance(colliderObject.transform.position, this.transform.position) <= minDis)
             {
                 timer = 0;
                 return true;
             }
-            return false;
+
+        }
+        return false;
+    }
+
+    private bool CheckTranslation()
+    {
+        if (Vector3.Distance(colliderObject.transform.position, this.transform.position) <= minDis)
+        {
+            return true;
+            
         }
 
         return false;

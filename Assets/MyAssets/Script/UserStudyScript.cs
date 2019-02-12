@@ -46,17 +46,28 @@ public class UserStudyScript: MonoBehaviour
 
     void Start()
     {
+
+        currentSystem = PlayerPrefs.GetInt("ChosenSystem");
+        //targetGroup = PlayerPrefs.GetInt("TargetGroup");
+        listsNumber = PlayerPrefs.GetInt("TargetGroup");
+
+        Debug.Log("System "+currentSystem);
+        Debug.Log("TargetList "+listsNumber);
+
+
         userstudyUI = (UserStudyUI)gameObject.GetComponent<UserStudyUI>();
         dDAS = (DDAS)gameObject.GetComponent<DDAS>();
 
         if (currentSystem ==0)
         {
+            SlidARPP.SetActive(true);
             slidARScript = (SlidARPPController)SlidARPP.GetComponent(typeof(SlidARPPController));
             slidARScript.AnnotationIsBeingSelected += EnableEditModeTimer;
-
+            slidARScript.InteractInAuthoringMode += EnableAuthoringModeTimer;
         }
         else
         {
+            Hybrid.SetActive(true);
             hybridScript = (HybridController)Hybrid.GetComponent(typeof(HybridController));
             hybridScript.AnnotationIsBeingSelected += EnableEditModeTimer;
             hybridScript.InteractInAuthoringMode += EnableAuthoringModeTimer;
@@ -67,20 +78,27 @@ public class UserStudyScript: MonoBehaviour
 
         //targetListsNumber[listsNumber].SetActive(true);
         //dDAS.SetupData(maxNumberOfTarget);
-        StartUserStudy(0);
+        //StartUserStudy(0);
     }
 
-    public void StartUserStudy(int targetGroup)
+    public void StartUserStudy()
+    {
+        SetupUserStudyData();
+    }
+
+    public void SetupUserStudyData()
     {
         ResetUserStudy();
 
-        listsNumber = targetGroup;
+
         targetListsNumber[listsNumber].SetActive(true);
-        userstudyBegin = true;
-        EnableTargetObject(0);
+
+
 
         maxNumberOfTarget = targetListsNumber[listsNumber].transform.childCount - 1;
         dDAS.SetupData(maxNumberOfTarget);
+        EnableTargetObject(0);
+        userstudyBegin = true;
     }
 
     private void EnableTargetObject(int i)
@@ -139,7 +157,7 @@ public class UserStudyScript: MonoBehaviour
     }
 
     private float elapsedTime = 0f;
-    private float setElapsedTime = 1;
+    private float setElapsedTime = 0.5f;
     private Vector3 prevDevicePos;
     private void MeasureDeviceMovement()
     {
@@ -224,6 +242,7 @@ public class UserStudyScript: MonoBehaviour
 
     public void EnableEditModeTimer(bool b)
     {
+        Debug.Log("EditModeTimer "+ b );
         editModeTimerOn = b;
     }
 

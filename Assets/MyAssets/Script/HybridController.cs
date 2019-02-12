@@ -72,7 +72,10 @@ public class HybridController : MonoBehaviour {
 
     private void OnDisable()
     {
-        HybridUI.SetActive(false);
+        if (HybridUI != null)
+        {
+            HybridUI.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -108,6 +111,7 @@ public class HybridController : MonoBehaviour {
                                 SetInitialOrientation();
                                 confirmButton.SetActive(true);
                                 ChangeState(2);
+                                InteractInAuthoringMode(true);
                             }
                             break;
                         }
@@ -119,14 +123,15 @@ public class HybridController : MonoBehaviour {
                                 {
                                     InteractInAuthoringMode(true);
                                 }
-                                else if (touch1.phase == TouchPhase.Ended)
-                                {
-                                    InteractInAuthoringMode(false);
-                                }
+
 
                                 var tmpTouch = touch1.position;
                                 tmpTouch.y += 100;
                                 sObject.transform.position = traAIni.GetRealWorldPos(tmpTouch);
+                            }
+                            else if (touch1.phase == TouchPhase.Ended || touch1.phase == TouchPhase.Canceled)
+                            {
+                                InteractInAuthoringMode(false);
                             }
                             break;
                         }
@@ -224,7 +229,7 @@ public class HybridController : MonoBehaviour {
                 SelectedObject(hit.collider.gameObject);
                 rayDis = Vector3.Distance(Camera.main.ScreenToWorldPoint(crossHairObj.transform.position), hit.collider.gameObject.transform.position);
 
-                EventSystemAnnotationBeingSelected(false);
+                EventSystemAnnotationBeingSelected(true);
                 /*
                 if (currState != AppState.AUTORING) {
                     if (AnnotationIsBeingSelected != null)
