@@ -12,6 +12,9 @@ public class UserStudyUI : MonoBehaviour
 
     private GameObject currentTarget;
 
+    [SerializeField]
+    private GameObject finishText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,5 +61,10 @@ public class UserStudyUI : MonoBehaviour
     public void BackToMenu()
     {
         SceneManager.LoadScene("Main");
+    }
+
+    public void ShowFinishTesxt(bool b)
+    {
+        finishText.SetActive(true);
     }
 }

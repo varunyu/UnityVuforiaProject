@@ -175,7 +175,8 @@ public class SlidARPPController : MonoBehaviour {
 							tmpTouch.y += 100;
 							sObject.transform.position = traAIni.GetRealWorldPos (tmpTouch);
 
-						}else if(touch1.phase == TouchPhase.Ended){
+						}else if(touch1.phase == TouchPhase.Ended|| touch1.phase == TouchPhase.Canceled)
+                            {
 							SaveInitialData ();
 							PrepareSlidARData ();
 							slidAR.ShowSlidARLine (true);
@@ -264,7 +265,21 @@ public class SlidARPPController : MonoBehaviour {
 			}
 		}
 
-	}
+
+        if (currState == AppState.SLIDAR)
+        {
+            if (sObject == null) { 
+
+                if (slidAR.GetSlidARStatus())
+                {
+                    slidAR.ShowSlidARLine(false);
+                }
+            }
+
+        }
+
+
+    }
 
 	private void SetInitialOrientation(){
 		sObject.transform.rotation = Quaternion.FromToRotation (Vector3.down,orienCont.GetGravityVector());
@@ -340,7 +355,7 @@ public class SlidARPPController : MonoBehaviour {
         Destroy (sObject);
 	}
 
-    private void EventSystemAnnotationBeingSelected(bool t)
+    public void EventSystemAnnotationBeingSelected(bool t)
     {
         if (AnnotationIsBeingSelected != null)
         {

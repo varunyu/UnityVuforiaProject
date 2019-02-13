@@ -197,6 +197,7 @@ public class UserStudyScript: MonoBehaviour
         editModeTimer = 0f;
         deviceMovementDistance = 0f;
         authoringModeTimer = 0f;
+        EnableEditModeTimer(false);
         /*
         count++;
         if (count < maxNumberOfTarget)
@@ -213,6 +214,7 @@ public class UserStudyScript: MonoBehaviour
             Debug.Log("Finish!!!!");
             DisableCurrentTarget();
             dDAS.UploadDataToInternet();
+            userstudyUI.ShowFinishTesxt(true);
         }
     }
 

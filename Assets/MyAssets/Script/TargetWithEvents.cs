@@ -92,6 +92,7 @@ public class TargetWithEvents : MonoBehaviour
 
         if (CheckTranslationWithDelay()&& CheckOrientation())
         {
+            Destroy(colliderObject);
             return true;
         }
         else return false;

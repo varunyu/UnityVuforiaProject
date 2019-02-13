@@ -29,8 +29,12 @@ public class SlidARScript : MonoBehaviour {
 		scWidth = Screen.width;
 	}
 
+    public bool GetSlidARStatus()
+    {
+        return slidARRenderLine;
+    }
 
-	public void ShowSlidARLine(bool b){
+    public void ShowSlidARLine(bool b){
 		slidARRenderLine = b;
 		lr.enabled = b;
 	}
