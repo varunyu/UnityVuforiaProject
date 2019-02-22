@@ -32,14 +32,20 @@ public class UserStudyMainScene : MonoBehaviour
     public void SetChosenMethod(int i)
     {
         ChosenMethod = i;
-        PlayerPrefs.DeleteKey("ChosenSystem");
+
+        if(PlayerPrefs.HasKey("ChosenSystem")){
+            PlayerPrefs.DeleteKey("ChosenSystem");
+        }
         PlayerPrefs.SetInt("ChosenSystem",ChosenMethod);
     }
 
     public void SetChosenStage(int Stage)
     {
-        PlayerPrefs.DeleteKey("WorldCoor");
-        PlayerPrefs.DeleteKey("TargetGroup");
+        if (PlayerPrefs.HasKey("WorldCoor") && PlayerPrefs.HasKey("TargetGroup"))
+        {
+            PlayerPrefs.DeleteKey("WorldCoor");
+            PlayerPrefs.DeleteKey("TargetGroup");
+        }
 
         if (Stage>=4)
         {
@@ -75,7 +81,14 @@ public class UserStudyMainScene : MonoBehaviour
     {
         SceneManager.LoadScene("UserStudy");
     }
-
+    public void LoadTutorialScenes()
+    {
+        SceneManager.LoadScene("Testing");
+    }
+    public void ChangeScenes(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
     // Start is called before the first frame update
     void Start()
     {

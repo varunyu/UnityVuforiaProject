@@ -50,14 +50,20 @@ public class TranslationAndIntial : MonoBehaviour {
         return (Instantiate(preFabList[preFabIndex], GetPosFrom2DTouch(t), worldCoordinate.transform.rotation, parentObject.transform));
     }
 
-
+    [SerializeField]
     private float range = 80f;
     public Vector3 GetRealWorldPos(Vector2 t){
         ray = Camera.main.ScreenPointToRay(t);
         return ray.GetPoint(range);//ARKitHitScript.HitLoc (t).position;
     }
+    public Vector3 GetRealWorldPos(Vector2 t, float R)
+    {
+        ray = Camera.main.ScreenPointToRay(t);
+        return ray.GetPoint(R);//ARKitHitScript.HitLoc (t).position;
+    }
 
-	public Vector3 GetRealWorldPos(Touch t){
+
+    public Vector3 GetRealWorldPos(Touch t){
 		return GetPosFrom2DTouch(t);//ARKitHitScript.HitLoc (t).position;
 	}
 	private Ray ray;
@@ -65,6 +71,12 @@ public class TranslationAndIntial : MonoBehaviour {
         ray = Camera.main.ScreenPointToRay(t.position);
 		return ray.GetPoint(range);
 	}
+
+    public Vector3 GetPosFrom2DTouch(Touch t,float R)
+    {
+        ray = Camera.main.ScreenPointToRay(t.position);
+        return ray.GetPoint(R);
+    }
 
     public void DebugObjectCreation()
     {

@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UserStudy.unity
     guid: 5388703bded0b4ba5b3da35503242c0a
+  - enabled: 1
+    path: Assets/Scenes/Testing.unity
+    guid: d0cb6e0e22aae4b03b735184e25415c3
+  - enabled: 1
+    path: Assets/Scenes/OpenCampus.unity
+    guid: 24e42f87495c046c2a6e70569641bd6a
   m_configObjects: {}

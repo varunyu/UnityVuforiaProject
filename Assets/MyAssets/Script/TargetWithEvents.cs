@@ -10,6 +10,7 @@ public class TargetWithEvents : MonoBehaviour
     public event Action<bool> UpdateROTIndicator;
 
     private bool isCollider;
+    [SerializeField]
     private GameObject colliderObject;
     // Start is called before the first frame update
     void Start()
@@ -32,8 +33,10 @@ public class TargetWithEvents : MonoBehaviour
                 if (OnTargetAlignedWithAnnotation != null)
                 {
                     OnTargetAlignedWithAnnotation();
+                    //Debug.Log("Correct");
                 }
                 this.gameObject.SetActive(false);
+                Destroy(colliderObject);
                 colliderObject = null;
             }
         }
@@ -54,7 +57,7 @@ public class TargetWithEvents : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("HITTT");
+        //Debug.Log("HITTT");
         isCollider = true;
         colliderObject = other.gameObject;
     }
@@ -92,7 +95,7 @@ public class TargetWithEvents : MonoBehaviour
 
         if (CheckTranslationWithDelay()&& CheckOrientation())
         {
-            Destroy(colliderObject);
+
             return true;
         }
         else return false;
@@ -103,6 +106,7 @@ public class TargetWithEvents : MonoBehaviour
     private float minDis = 3f;
     private bool CheckTranslationWithDelay()
     {
+        /*
         timer += Time.deltaTime;
         if (timer >= delayTime)
         {
@@ -113,6 +117,23 @@ public class TargetWithEvents : MonoBehaviour
             }
 
         }
+        //timer = 0;
+        */
+        if (CheckTranslation())
+        {
+            timer += Time.deltaTime;
+            if (timer >= delayTime)
+            {
+                timer = 0;
+                return true;
+            }
+
+        }
+        else
+        {
+            timer = 0;
+        }
+
         return false;
     }
 

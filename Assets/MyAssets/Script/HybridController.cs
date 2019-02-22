@@ -9,6 +9,7 @@ public class HybridController : MonoBehaviour {
 
     public event System.Action<bool> AnnotationIsBeingSelected;
     public event System.Action<bool> InteractInAuthoringMode;
+    public event System.Action<GameObject> SendSelectedAnnotation;
 
     [SerializeField]
     private GameObject HybridUI;
@@ -39,7 +40,7 @@ public class HybridController : MonoBehaviour {
 
     private int nFinger;
     private float rayDis;
-    private bool isObjectVerticalToG;
+    private int objectInitialOrientation;
 
     private Touch touch1;
     private Touch touch2;
@@ -245,16 +246,20 @@ public class HybridController : MonoBehaviour {
         return false;
     }
 
-    public void ObjectPointToGround(bool t)
+    public void ObjectPointToGround(int t)
     {
-        isObjectVerticalToG = t;
+        objectInitialOrientation = t;
     }
     private void SetInitialOrientation()
     {
 
-        if (!isObjectVerticalToG)
+        if (objectInitialOrientation==1)
         {
             sObject.transform.Rotate(Vector3.right, 90f);
+        }
+        else if(objectInitialOrientation==2)
+        {
+            sObject.transform.Rotate(Vector3.right, 270f);
         }
     }
 
@@ -286,6 +291,10 @@ public class HybridController : MonoBehaviour {
     {
         if (AnnotationIsBeingSelected != null)
         {
+            if (t)
+            {
+                SendSelectedAnnotation(sObject);
+            }
             AnnotationIsBeingSelected(t);
         }
 

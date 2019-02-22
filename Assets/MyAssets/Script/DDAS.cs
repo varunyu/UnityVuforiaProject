@@ -100,4 +100,16 @@ public class DDAS : MonoBehaviour
 
     }
 
+    
+    public void ClearScorePannel()
+    {
+        for (int i=0; i<scoringPannel.transform.childCount; i++)
+        {
+            if (i != 0)
+            {
+                Destroy(scoringPannel.transform.GetChild(i).gameObject);
+            }
+        }
+    }
+
 }

@@ -18,9 +18,13 @@ public class SimpleDepthClue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        shadowPlane.transform.position = new Vector3(gameObject.transform.position.x,0, gameObject.transform.position.z);
-        shadowPlane.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
-        DrawDepthClue();
+        if (this.gameObject != null&& shadowPlane != null)
+        {
+            shadowPlane.transform.position = new Vector3(gameObject.transform.position.x, 0, gameObject.transform.position.z);
+            shadowPlane.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+            DrawDepthClue();
+        }
+        
     }
 
     private void DrawDepthClue()

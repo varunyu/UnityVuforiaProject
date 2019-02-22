@@ -17,6 +17,9 @@ public class UIFollowObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position = Camera.main.WorldToScreenPoint(objectToFollow.transform.position);
+        if (objectToFollow != null)
+        {
+            this.transform.position = Camera.main.WorldToScreenPoint(objectToFollow.transform.position);
+        }
     }
 }

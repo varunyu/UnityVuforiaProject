@@ -62,6 +62,9 @@ public class SlidARScript : MonoBehaviour {
 		initPos = pos;
 	}
 
+    // 0.005f
+    [SerializeField]
+    private float lineSize = 0.005f;
 	private void DrawSlidAR(){
 		
 		//lr.enabled = true;
@@ -73,12 +76,13 @@ public class SlidARScript : MonoBehaviour {
 		//lr.SetColors (Color.red,Color.red);
 		lr.startColor = Color.red;
 		lr.endColor = Color.red;
-		lr.startWidth = 0.005f;
-		lr.endWidth = 0.005f;
+		//lr.startWidth = 0.005f;
+		//lr.endWidth = 0.005f;
+        lr.startWidth = lineSize;
+        lr.endWidth = lineSize;
 
 
-
-		tmpcam2 = Camera.main.WorldToScreenPoint (initCam);
+        tmpcam2 = Camera.main.WorldToScreenPoint (initCam);
 		tmpAnno2 = Camera.main.WorldToScreenPoint (initPos);
 
 		Vector2 camOnScr = new Vector2 (tmpcam2.x,tmpcam2.y); 

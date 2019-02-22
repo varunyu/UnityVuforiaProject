@@ -23,8 +23,9 @@ public class UserStudyScript: MonoBehaviour
     public GameObject Hybrid;
     private SlidARPPController slidARScript;
     private HybridController hybridScript;
-    private UserStudyUI userstudyUI;
+    //private UserStudyUI userstudyUI;
     private DDAS dDAS;
+    private GameObject cSelectedObject;
 
     public GameObject edit_Mode_timerText;
     public GameObject authoring_Mode_timerText;
@@ -44,18 +45,26 @@ public class UserStudyScript: MonoBehaviour
     public bool userstudyBegin;
     private GameObject currentTarget;
 
+
+    [SerializeField]
+    private bool userStudy = true;
     void Start()
     {
+        if (userStudy)
+        {
+            currentSystem = PlayerPrefs.GetInt("ChosenSystem");
+            //targetGroup = PlayerPrefs.GetInt("TargetGroup");
+            listsNumber = PlayerPrefs.GetInt("TargetGroup");
+        }
+        else
+        {
+            currentSystem = -1;
+        }
+        //Debug.Log("System "+currentSystem);
+        //Debug.Log("TargetList "+listsNumber);
 
-        currentSystem = PlayerPrefs.GetInt("ChosenSystem");
-        //targetGroup = PlayerPrefs.GetInt("TargetGroup");
-        listsNumber = PlayerPrefs.GetInt("TargetGroup");
 
-        Debug.Log("System "+currentSystem);
-        Debug.Log("TargetList "+listsNumber);
-
-
-        userstudyUI = (UserStudyUI)gameObject.GetComponent<UserStudyUI>();
+        //userstudyUI = (UserStudyUI)gameObject.GetComponent<UserStudyUI>();
         dDAS = (DDAS)gameObject.GetComponent<DDAS>();
 
         if (currentSystem ==0)
@@ -64,13 +73,27 @@ public class UserStudyScript: MonoBehaviour
             slidARScript = (SlidARPPController)SlidARPP.GetComponent(typeof(SlidARPPController));
             slidARScript.AnnotationIsBeingSelected += EnableEditModeTimer;
             slidARScript.InteractInAuthoringMode += EnableAuthoringModeTimer;
+            slidARScript.SendSelectedAnnotation += SetCurrentSelectedObject;
         }
-        else
+        else if(currentSystem ==1)
         {
             Hybrid.SetActive(true);
             hybridScript = (HybridController)Hybrid.GetComponent(typeof(HybridController));
             hybridScript.AnnotationIsBeingSelected += EnableEditModeTimer;
             hybridScript.InteractInAuthoringMode += EnableAuthoringModeTimer;
+            hybridScript.SendSelectedAnnotation += SetCurrentSelectedObject;
+        }
+        else
+        {
+            slidARScript = (SlidARPPController)SlidARPP.GetComponent(typeof(SlidARPPController));
+            slidARScript.AnnotationIsBeingSelected += EnableEditModeTimer;
+            slidARScript.InteractInAuthoringMode += EnableAuthoringModeTimer;
+            slidARScript.SendSelectedAnnotation += SetCurrentSelectedObject;
+
+            hybridScript = (HybridController)Hybrid.GetComponent(typeof(HybridController));
+            hybridScript.AnnotationIsBeingSelected += EnableEditModeTimer;
+            hybridScript.InteractInAuthoringMode += EnableAuthoringModeTimer;
+            hybridScript.SendSelectedAnnotation += SetCurrentSelectedObject;
         }
         //timer = 0f;
         //TargetWithEvents.OnTargetAlignedWithAnnotation += TargetObjectIsAlignedWithAnnotation;
@@ -110,14 +133,14 @@ public class UserStudyScript: MonoBehaviour
 
         currentTarget = targetListsNumber[listsNumber].transform.GetChild(i).gameObject;
         currentTarget.SetActive(true);
-        currentTarget.GetComponent<TargetWithEvents>().OnTargetAlignedWithAnnotation += TargetObjectIsAlignedWithAnnotation;
-        userstudyUI.RegisterNewListenser(currentTarget);
+        //currentTarget.GetComponent<TargetWithEvents>().OnTargetAlignedWithAnnotation += TargetObjectIsAlignedWithAnnotation;
+        //userstudyUI.RegisterNewListenser(currentTarget);
     }
 
     private void DisableCurrentTarget()
     {
-        currentTarget.GetComponent<TargetWithEvents>().OnTargetAlignedWithAnnotation -= TargetObjectIsAlignedWithAnnotation;
-        userstudyUI.ClearAll();
+        //currentTarget.GetComponent<TargetWithEvents>().OnTargetAlignedWithAnnotation -= TargetObjectIsAlignedWithAnnotation;
+        //userstudyUI.ClearAll();
         currentTarget.SetActive(false);
         currentTarget = null;
     }
@@ -142,8 +165,10 @@ public class UserStudyScript: MonoBehaviour
         {
             if (editModeTimerOn)
             {
+                CorrectionCheck();
                 editModeTimer += Time.deltaTime;
                 edit_Mode_timerText.GetComponent<Text>().text = editModeTimer.ToString("F2") + " S";
+
 
                 MeasureDeviceMovement();
 
@@ -155,16 +180,60 @@ public class UserStudyScript: MonoBehaviour
             }
         }
     }
+    private float timer = 0;
+    private float delayTime = 1f;
+
+    private void CorrectionCheck()
+    {
+        if(CheckPosition()&&CheckOrientation()){
+            timer += Time.deltaTime;
+
+            if (timer >= delayTime)
+            {
+                TargetObjectIsAlignedWithAnnotation();
+                timer = 0;
+                
+            }
+        }
+        else
+        {
+            timer = 0;
+        }
+    }
+    [SerializeField]
+    private float minRot = 12f;
+    private bool CheckOrientation()
+    {
+        if (Quaternion.Angle(cSelectedObject.transform.rotation, currentTarget.transform.rotation) <= minRot)
+        {
+            return true;
+        }
+
+        return false;
+    }
+    [SerializeField]
+    private float minDis = 3f;
+    private bool CheckPosition()
+    {
+        if (Vector3.Distance(cSelectedObject.transform.position, currentTarget.transform.position) <= minDis)
+        {
+            return true;
+
+        }
+
+        return false;
+    }
 
     private float elapsedTime = 0f;
-    private float setElapsedTime = 0.5f;
-    private Vector3 prevDevicePos;
+    private float setElapsedTime = 1f;
+    private Vector3 prevDevicePos = new Vector3(0,0,0);
+    private bool isFirstTimeCall = true;
     private void MeasureDeviceMovement()
     {
         elapsedTime += Time.deltaTime;
         if (elapsedTime >= setElapsedTime)
         {
-            if(prevDevicePos != null || (Vector3.Distance(prevDevicePos, Camera.main.transform.position)>=1f))
+            if(!isFirstTimeCall && (Vector3.Distance(prevDevicePos, Camera.main.transform.position)>=1f))
             {
                 deviceMovementDistance += Vector3.Distance(prevDevicePos, Camera.main.transform.position);
             }
@@ -176,6 +245,11 @@ public class UserStudyScript: MonoBehaviour
             prevDevicePos = Camera.main.transform.position;
             elapsedTime = 0;
             device_Mov_DisText.GetComponent<Text>().text = deviceMovementDistance.ToString("F2") + " cm";
+
+            if (isFirstTimeCall)
+            {
+                isFirstTimeCall = false;
+            }
         }
 
     }
@@ -185,6 +259,7 @@ public class UserStudyScript: MonoBehaviour
         count = 0;
         editModeTimer = 0f;
         deviceMovementDistance = 0f;
+        isFirstTimeCall = true;
         authoringModeTimer = 0f;
     }
 
@@ -196,6 +271,7 @@ public class UserStudyScript: MonoBehaviour
         SaveCurrentData();
         editModeTimer = 0f;
         deviceMovementDistance = 0f;
+        isFirstTimeCall = true;
         authoringModeTimer = 0f;
         EnableEditModeTimer(false);
         /*
@@ -211,11 +287,12 @@ public class UserStudyScript: MonoBehaviour
         }
         else
         {
-            Debug.Log("Finish!!!!");
+            //Debug.Log("Finish!!!!");
             DisableCurrentTarget();
             dDAS.UploadDataToInternet();
-            userstudyUI.ShowFinishTesxt(true);
+            //userstudyUI.ShowFinishTesxt(true);
         }
+        Destroy(cSelectedObject);
     }
 
     private bool IsFinish()
@@ -244,9 +321,19 @@ public class UserStudyScript: MonoBehaviour
 
     public void EnableEditModeTimer(bool b)
     {
-        Debug.Log("EditModeTimer "+ b );
+        //Debug.Log("EditModeTimer "+ b );
         editModeTimerOn = b;
     }
+    private void SetCurrentSelectedObject(GameObject go)
+    {
+        cSelectedObject = go;
+    }
 
-
+    public void StopUserStudy()
+    {
+        ResetUserStudy();
+        EnableEditModeTimer(false);
+        EnableAuthoringModeTimer(false);
+        userstudyBegin = false;
+    }
 }

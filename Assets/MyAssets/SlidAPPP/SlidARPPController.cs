@@ -8,6 +8,7 @@ public class SlidARPPController : MonoBehaviour {
 
     public event System.Action<bool> AnnotationIsBeingSelected;
     public event System.Action<bool> InteractInAuthoringMode;
+    public event System.Action<GameObject> SendSelectedAnnotation;
 
     [SerializeField]
     private GameObject SlidARUI;
@@ -35,7 +36,7 @@ public class SlidARPPController : MonoBehaviour {
 	private SlidARScript slidAR;
 	private ObjectInfo oInfo;
 
-	private bool isObjectVerticalToG;
+	private int objectInitialOrientation;
 	//private int arObjectIndex;
 
 	public GameObject[] arObjectList;
@@ -53,7 +54,7 @@ public class SlidARPPController : MonoBehaviour {
 		traAIni = (TranslationAndIntial)gameObject.GetComponent(typeof(TranslationAndIntial));
 		orienCont = (OrientationControl)gameObject.GetComponent(typeof(OrientationControl));
 		slidAR = (SlidARScript)gameObject.GetComponent (typeof(SlidARScript));
-		isObjectVerticalToG = true;
+		objectInitialOrientation = 0;
 
         UIFObj = (UIFollowObject)objCenterIn2D.GetComponent(typeof(UIFollowObject));
 
@@ -76,8 +77,8 @@ public class SlidARPPController : MonoBehaviour {
 		
 	}
 
-	public void SetIsObjectVerticalToG(bool t){
-		isObjectVerticalToG = t;
+    public void SetIsObjectVerticalToG(int t){
+		objectInitialOrientation = t;
 	}
 
 	public void SelectObjectToCreate(int i){
@@ -171,11 +172,18 @@ public class SlidARPPController : MonoBehaviour {
 					} else {
 						slidAR.ShowSlidARLine(false);
 						if (touch1.phase == TouchPhase.Began || touch1.phase == TouchPhase.Moved) {
+                                /*
 							var tmpTouch = touch1.position;
 							tmpTouch.y += 100;
 							sObject.transform.position = traAIni.GetRealWorldPos (tmpTouch);
+                            */
+                                var tmpDis = Vector3.Distance(Camera.main.transform.position, sObject.transform.position);
+                                var tmpTouch = touch1.position;
+                                tmpTouch.y += 100;
+                                sObject.transform.position = traAIni.GetRealWorldPos(tmpTouch,tmpDis);
 
-						}else if(touch1.phase == TouchPhase.Ended|| touch1.phase == TouchPhase.Canceled)
+                            }
+                            else if(touch1.phase == TouchPhase.Ended|| touch1.phase == TouchPhase.Canceled)
                             {
 							SaveInitialData ();
 							PrepareSlidARData ();
@@ -283,10 +291,16 @@ public class SlidARPPController : MonoBehaviour {
 
 	private void SetInitialOrientation(){
 		sObject.transform.rotation = Quaternion.FromToRotation (Vector3.down,orienCont.GetGravityVector());
-		if (!isObjectVerticalToG) {
+
+		if (objectInitialOrientation==1) {
+
 			sObject.transform.Rotate (Vector3.right, 90f);
 		} 
-	}
+        else if(objectInitialOrientation == 2)
+        {
+            sObject.transform.Rotate(Vector3.right, 270f);
+        }
+    }
 
 	public void SaveInitialData(){
 		//Debug.Log (Camera.main.transform.position);
@@ -315,7 +329,7 @@ public class SlidARPPController : MonoBehaviour {
         objCenterIn2D.SetActive(true);
         UIFObj.SetObjectToFollow(selected);
         sObject = selected;
-
+        SendSelectedAnnotation(sObject);
         /*
         if (currState != AppState.AUTORING) {
             if (AnnotationIsBeingSelected != null)
@@ -359,6 +373,10 @@ public class SlidARPPController : MonoBehaviour {
     {
         if (AnnotationIsBeingSelected != null)
         {
+            if (t)
+            {
+                SendSelectedAnnotation(sObject);
+            }
             AnnotationIsBeingSelected(t);
         }
 
