@@ -3,7 +3,7 @@ using System.Collections;
 
 // PLEASE NOTE! THIS SCRIPT IS FOR DEMO PURPOSES ONLY :) //
 
-public class Plane : MonoBehaviour {
+public class AIRPlane : MonoBehaviour {
 	public GameObject prop;
 	public GameObject propBlured;
 

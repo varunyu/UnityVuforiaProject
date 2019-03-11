@@ -39,7 +39,7 @@ public class HybridController : MonoBehaviour {
     public GameObject confirmButton;
 
     private int nFinger;
-    private float rayDis;
+    private float rayDis = 65f;
     private int objectInitialOrientation;
 
     private Touch touch1;
@@ -53,6 +53,8 @@ public class HybridController : MonoBehaviour {
     float cMagnitude;
     float diffMagnitude;
     private float minPitcgDis = 10f;
+
+    private bool lockPosition = false;
 
     void Start () {
         currState = AppState.NONE;
@@ -198,7 +200,7 @@ public class HybridController : MonoBehaviour {
 
         }
 
-        if (sObject!=null && currState == AppState.EDIT)
+        if (sObject!=null && currState == AppState.EDIT && !lockPosition)
         {
             DeviceMovemnt();
         }
@@ -275,19 +277,29 @@ public class HybridController : MonoBehaviour {
     }
     public void DeSelectObject()
     {
-        objCenterIn2D.SetActive(false);
-        sObject = null;
+        if (sObject == null)
+        {
+            EventSystemAnnotationBeingSelected(false);
+            ChangeState(0);
+            objCenterIn2D.SetActive(false);
+        }
+        else
+        {
+            objCenterIn2D.SetActive(false);
+            sObject = null;
 
-        EventSystemAnnotationBeingSelected(false);
+        }
+
+
         /*
         if (AnnotationIsBeingSelected != null)
         {
             AnnotationIsBeingSelected(false);
         }*/
-        ChangeState(0);
+
     }
 
-    private void EventSystemAnnotationBeingSelected(bool t)
+    public void EventSystemAnnotationBeingSelected(bool t)
     {
         if (AnnotationIsBeingSelected != null)
         {
@@ -307,5 +319,8 @@ public class HybridController : MonoBehaviour {
             InteractInAuthoringMode(t);
         }
     }
-
+    public void LockPosition(bool t)
+    {
+        lockPosition = t;
+    }
 }

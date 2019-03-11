@@ -5,16 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class UserStudyUI : MonoBehaviour
 {
+    /*
     [SerializeField]
     private GameObject pos_Indicator_UI;
     [SerializeField]
     private GameObject Rot_Indicator_UI;
-
+    */
     private GameObject currentTarget;
 
     [SerializeField]
     private GameObject finishText;
 
+    [SerializeField]
+    private GameObject time_Out_Object;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +28,7 @@ public class UserStudyUI : MonoBehaviour
     void Update()
     {
         
-    }
+    }/*
     public void RegisterNewListenser(GameObject go)
     {
         //go
@@ -57,7 +60,7 @@ public class UserStudyUI : MonoBehaviour
     {
         Rot_Indicator_UI.SetActive(t);
     }
-
+    */
     public void BackToMenu()
     {
         SceneManager.LoadScene("Main");
@@ -66,5 +69,9 @@ public class UserStudyUI : MonoBehaviour
     public void ShowFinishTesxt(bool b)
     {
         finishText.SetActive(true);
+    }
+    public void ShowTimeOutText(bool b)
+    {
+        time_Out_Object.SetActive(b);
     }
 }

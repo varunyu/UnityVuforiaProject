@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetWithEvents : MonoBehaviour
+public class DestroyContactObject : MonoBehaviour
 {
-    /*
-    public event Action OnTargetAlignedWithAnnotation;
-    public event Action<bool> UpdatePOSIndicator;
-    public event Action<bool> UpdateROTIndicator;
-    */
     private bool isCollider;
     [SerializeField]
     private GameObject colliderObject;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -24,25 +18,19 @@ public class TargetWithEvents : MonoBehaviour
     {
 
     }
-    /*
+
     private void FixedUpdate()
     {
         if (isCollider)
         {
             if(CheckPos())
             {
-                if (OnTargetAlignedWithAnnotation != null)
-                {
-                    OnTargetAlignedWithAnnotation();
-                    //Debug.Log("Correct");
-                }
-                this.gameObject.SetActive(false);
                 Destroy(colliderObject);
                 colliderObject = null;
             }
         }
-    }*/
-    /*
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("HITTT");
@@ -54,8 +42,8 @@ public class TargetWithEvents : MonoBehaviour
     {
         isCollider = false;
         colliderObject = null;
-    }*/
-    /*
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("HITTT");
@@ -68,15 +56,6 @@ public class TargetWithEvents : MonoBehaviour
         isCollider = false;
         colliderObject = null;
 
-        if (UpdatePOSIndicator != null)
-        {
-            UpdatePOSIndicator(false);
-        }
-        if (UpdateROTIndicator != null)
-        {
-            UpdateROTIndicator(false);
-        }
-
     }
 
 
@@ -84,14 +63,6 @@ public class TargetWithEvents : MonoBehaviour
 
     private bool CheckPos()
     {
-        if(UpdatePOSIndicator!= null)
-        {
-            UpdatePOSIndicator(CheckTranslation());
-        }
-        if (UpdateROTIndicator != null)
-        {
-            UpdateROTIndicator(CheckOrientation());
-        }
 
 
         if (CheckTranslationWithDelay()&& CheckOrientation())
@@ -101,10 +72,10 @@ public class TargetWithEvents : MonoBehaviour
         }
         else return false;
     }
-    */
+
     private float timer = 0;
     private float delayTime = 1f;
-    private float minDis = 3f;
+    private float minDis = 2f;
     private bool CheckTranslationWithDelay()
     {
         /*
@@ -143,7 +114,7 @@ public class TargetWithEvents : MonoBehaviour
         if (Vector3.Distance(colliderObject.transform.position, this.transform.position) <= minDis)
         {
             return true;
-            
+
         }
 
         return false;

@@ -15,7 +15,7 @@ public class TranslationAndIntial : MonoBehaviour {
 	void Awake(){
         //ARKitHitScript = (ARKitHitCheck)gameObject.GetComponent(typeof(ARKitHitCheck));
         var stage = PlayerPrefs.GetInt("WorldCoor");
-        Debug.Log("WorldCoordi "+ stage);
+        //Debug.Log("WorldCoordi "+ stage);
 
         if (stage == 1)
         {
@@ -38,6 +38,11 @@ public class TranslationAndIntial : MonoBehaviour {
     public void SetPrefabIndex(int i)
     {
         preFabIndex = i;
+    }
+
+    public GameObject ObjectInstantiateDubug()
+    {
+        return (Instantiate(preFabList[preFabIndex], new Vector3(0, 0, 0), worldCoordinate.transform.rotation, parentObject.transform));
     }
 
     public GameObject ObjectInstantiate(Touch t,GameObject prefab){

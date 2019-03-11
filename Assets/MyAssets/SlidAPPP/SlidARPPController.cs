@@ -30,6 +30,7 @@ public class SlidARPPController : MonoBehaviour {
 		 * */
 	}
 	private AppState currState;
+    [SerializeField]
 	private GameObject sObject;
 	private TranslationAndIntial traAIni;
 	private OrientationControl orienCont;
@@ -101,7 +102,18 @@ public class SlidARPPController : MonoBehaviour {
 
 
 
-	void Update () {
+    public void DebugAddObject()
+    {
+        SelectedObject(traAIni.ObjectInstantiateDubug());
+        oInfo = (ObjectInfo)sObject.GetComponent(typeof(ObjectInfo));
+        SetInitialOrientation();
+        confirmButton.SetActive(true);
+        ChangeState(2);
+
+        EventSystemInteractInAthoringMode(true);
+    }
+
+    void Update () {
 
 		nFinger = Input.touchCount;
 		if (nFinger > 0) {
@@ -171,6 +183,7 @@ public class SlidARPPController : MonoBehaviour {
 						}
 					} else {
 						slidAR.ShowSlidARLine(false);
+                            touch2 = Input.GetTouch(1);
 						if (touch1.phase == TouchPhase.Began || touch1.phase == TouchPhase.Moved) {
                                 /*
 							var tmpTouch = touch1.position;
@@ -183,7 +196,7 @@ public class SlidARPPController : MonoBehaviour {
                                 sObject.transform.position = traAIni.GetRealWorldPos(tmpTouch,tmpDis);
 
                             }
-                            else if(touch1.phase == TouchPhase.Ended|| touch1.phase == TouchPhase.Canceled)
+                            else if(touch1.phase == TouchPhase.Ended|| touch1.phase == TouchPhase.Canceled || touch2.phase == TouchPhase.Ended || touch2.phase == TouchPhase.Canceled)
                             {
 							SaveInitialData ();
 							PrepareSlidARData ();
@@ -329,7 +342,12 @@ public class SlidARPPController : MonoBehaviour {
         objCenterIn2D.SetActive(true);
         UIFObj.SetObjectToFollow(selected);
         sObject = selected;
-        SendSelectedAnnotation(sObject);
+
+        if (SendSelectedAnnotation != null)
+        {
+            SendSelectedAnnotation(sObject);
+        }
+
         /*
         if (currState != AppState.AUTORING) {
             if (AnnotationIsBeingSelected != null)

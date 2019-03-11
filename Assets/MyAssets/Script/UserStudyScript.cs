@@ -17,13 +17,13 @@ public class UserStudyScript: MonoBehaviour
     private bool authoringModeTimerOn;
     private float authoringModeTimer;
 
-    private float deviceMovementDistance;
+    private float deviceMovementDistance =0f;
 
     public GameObject SlidARPP;
     public GameObject Hybrid;
     private SlidARPPController slidARScript;
     private HybridController hybridScript;
-    //private UserStudyUI userstudyUI;
+    private UserStudyUI userstudyUI;
     private DDAS dDAS;
     private GameObject cSelectedObject;
 
@@ -43,11 +43,15 @@ public class UserStudyScript: MonoBehaviour
     private int listsNumber;
 
     public bool userstudyBegin;
+    [SerializeField]
     private GameObject currentTarget;
 
 
     [SerializeField]
     private bool userStudy = true;
+    [SerializeField]
+    private float timeOutLimited = 300f;
+
     void Start()
     {
         if (userStudy)
@@ -64,7 +68,7 @@ public class UserStudyScript: MonoBehaviour
         //Debug.Log("TargetList "+listsNumber);
 
 
-        //userstudyUI = (UserStudyUI)gameObject.GetComponent<UserStudyUI>();
+        userstudyUI = (UserStudyUI)gameObject.GetComponent<UserStudyUI>();
         dDAS = (DDAS)gameObject.GetComponent<DDAS>();
 
         if (currentSystem ==0)
@@ -136,6 +140,10 @@ public class UserStudyScript: MonoBehaviour
         //currentTarget.GetComponent<TargetWithEvents>().OnTargetAlignedWithAnnotation += TargetObjectIsAlignedWithAnnotation;
         //userstudyUI.RegisterNewListenser(currentTarget);
     }
+    public void ShowCurrentTarget()
+    {
+        currentTarget.SetActive(true);
+    }
 
     private void DisableCurrentTarget()
     {
@@ -169,6 +177,10 @@ public class UserStudyScript: MonoBehaviour
                 editModeTimer += Time.deltaTime;
                 edit_Mode_timerText.GetComponent<Text>().text = editModeTimer.ToString("F2") + " S";
 
+                if (editModeTimer >= timeOutLimited)
+                {
+                    TimeOut();
+                }
 
                 MeasureDeviceMovement();
 
@@ -180,6 +192,23 @@ public class UserStudyScript: MonoBehaviour
             }
         }
     }
+    /*
+     * Stop and continue after time out function  
+     * */  
+    private void TimeOut()
+    {
+        userstudyBegin = false;
+        userstudyUI.ShowTimeOutText(true);
+    }
+    public void ContinueAfterTimeOut()
+    {
+        timer = 0;
+        userstudyBegin = true;
+        TargetObjectIsAlignedWithAnnotation();
+        userstudyUI.ShowTimeOutText(false);
+    }
+
+
     private float timer = 0;
     private float delayTime = 1f;
 
@@ -190,6 +219,7 @@ public class UserStudyScript: MonoBehaviour
 
             if (timer >= delayTime)
             {
+                //Debug.Log("Pos Correct");
                 TargetObjectIsAlignedWithAnnotation();
                 timer = 0;
                 
@@ -204,6 +234,10 @@ public class UserStudyScript: MonoBehaviour
     private float minRot = 12f;
     private bool CheckOrientation()
     {
+        if (cSelectedObject == null)
+        {
+            return false;
+        }
         if (Quaternion.Angle(cSelectedObject.transform.rotation, currentTarget.transform.rotation) <= minRot)
         {
             return true;
@@ -215,6 +249,10 @@ public class UserStudyScript: MonoBehaviour
     private float minDis = 3f;
     private bool CheckPosition()
     {
+        if (cSelectedObject == null)
+        {
+            return false;
+        }
         if (Vector3.Distance(cSelectedObject.transform.position, currentTarget.transform.position) <= minDis)
         {
             return true;
@@ -282,7 +320,7 @@ public class UserStudyScript: MonoBehaviour
         }*/
         if (!IsFinish())
         {
-
+            //Debug.Log("Next target :"+count);
             EnableTargetObject(count);
         }
         else
@@ -290,9 +328,10 @@ public class UserStudyScript: MonoBehaviour
             //Debug.Log("Finish!!!!");
             DisableCurrentTarget();
             dDAS.UploadDataToInternet();
-            //userstudyUI.ShowFinishTesxt(true);
+            userstudyUI.ShowFinishTesxt(true);
         }
         Destroy(cSelectedObject);
+        //Debug.Log("Remove cObject");
     }
 
     private bool IsFinish()

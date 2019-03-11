@@ -8,15 +8,31 @@ public class ObjectInfo : MonoBehaviour {
 	private Vector3 initCam;
 	private Vector3 initPos;
 	private string text;
+
+    //Scale Relative To Cam
+
+    public float objectScale = 0.01f;
+    [SerializeField]
+    private Vector3 initialScale;
+    private Plane plane;
+    [SerializeField]
+    private Camera cam;
 	// Use this for initialization
 	void Start () {
-		
-	}
+        initialScale = transform.localScale;
+        if(cam == null)
+        {
+            cam = Camera.main;
+        }
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        plane = new Plane(cam.transform.forward, cam.transform.position);
+        float dist = plane.GetDistanceToPoint(transform.position);
+        transform.localScale = initialScale * dist * objectScale;
+    }
 
 	public Vector3 GetInitCam(){
 		return initCam;
