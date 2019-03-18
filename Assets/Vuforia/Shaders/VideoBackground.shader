@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 /*===============================================================================
 Copyright 2017-2018 PTC Inc.
 
@@ -16,101 +18,73 @@ specific language governing permissions and limitations under the License.
 Shader "Custom/VideoBackground" {
     // Used to render the Vuforia Video Background
 
-    Properties
+ Properties
     {
-        [NoScaleOffset] _MainTex("Texture", 2D) = "white" {}
-        [NoScaleOffset] _UVTex("UV Texture", 2D) = "white" {}
+        // we have removed support for texture tiling/offset,
+        // so make them not be displayed in material inspector
+        [NoScaleOffset] _MainTex ("Texture", 2D) = "white" {}
     }
-        SubShader
+    SubShader
     {
-        Tags {"Queue" = "geometry-11" "RenderType" = "opaque" }
-        Pass {
+    Tags { "QUEUE"="geometry-11" "RenderType"="Opaque" }
+        Pass
+        {
+            Tags { "QUEUE"="geometry-11" "RenderType"="Opaque" }
             ZWrite Off
             Cull Off
-            Lighting Off
-
-             CGPROGRAM
-
-            #pragma multi_compile VUFORIA_RGB VUFORIA_YUVNV12 VUFORIA_YUVNV21
-
+            
+            CGPROGRAM
+            // use "vert" function as the vertex shader
             #pragma vertex vert
+            // use "frag" function as the pixel (fragment) shader
             #pragma fragment frag
+			
+			#include "UnityCG.cginc"
 
-            #include "UnityCG.cginc"
-
-
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
-#if (VUFORIA_YUVNV12 || VUFORIA_YUVNV21)
-            sampler2D _UVTex;
-            float4 _UVTex_ST;
-#endif
-
-            struct v2f {
-                float4  pos : SV_POSITION;
-                float2  uv : TEXCOORD0;
-#if (VUFORIA_YUVNV12 || VUFORIA_YUVNV21)
-                float2  uv2 : TEXCOORD1;
-#endif
+            // vertex shader inputs
+            struct appdata
+            {
+                float4 vertex : POSITION; // vertex position
+                float2 uv : TEXCOORD0; // texture coordinate
             };
 
-            v2f vert(appdata_base v)
+            // vertex shader outputs ("vertex to fragment")
+            struct v2f
+            {
+                float2 uv : TEXCOORD0; // texture coordinate
+                float4 vertex : SV_POSITION; // clip space position
+            };
+
+            // vertex shader
+            v2f vert (appdata v)
             {
                 v2f o;
-                o.pos = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
-#if (VUFORIA_YUVNV12 || VUFORIA_YUVNV21)
-                o.uv2 = TRANSFORM_TEX(v.texcoord, _UVTex);
-#endif				               
+                // transform position to clip space
+                // (multiply with model*view*projection matrix)
+                o.vertex = UnityObjectToClipPos(v.vertex);
+                // just pass the texture coordinate
+                o.uv = v.uv;
                 return o;
             }
+            
+            // texture we will sample
+            sampler2D _MainTex;
 
-#if (VUFORIA_YUVNV12 || VUFORIA_YUVNV21)
-               half4 frag(v2f i) : COLOR
+            // pixel shader; returns low precision ("fixed4" type)
+            // color ("SV_Target" semantic)
+            fixed4 frag (v2f i) : SV_Target
             {
-                half4 c;
-                half2 uv = tex2D(_UVTex, i.uv2).rg;
-                float y = tex2D(_MainTex, i.uv).r;
-
-#if VUFORIA_YUVNV12				
-                half4 v4yuv1 = half4(y, uv, 1.0);
-
-                c.r = dot(half4(1.1640625,  0.000000000,  1.5957031250, -0.87060546875), v4yuv1);
-                c.g = dot(half4(1.1640625, -0.390625000, -0.8134765625,  0.52929687500), v4yuv1);
-                c.b = dot(half4(1.1640625,  2.017578125,  0.0000000000, -1.08154296875), v4yuv1);
-                c.a = 1.0;
-#else               
-                half4 v4yuv1 = half4(y, uv, 1.0);
-
-                c.r = dot(half4(1.1640625,  1.5957031250,  0.000000000, -0.87060546875), v4yuv1);
-                c.g = dot(half4(1.1640625, -0.8134765625, -0.390625000,  0.52929687500), v4yuv1);
-                c.b = dot(half4(1.1640625,  0.0000000000,  2.017578125, -1.08154296875), v4yuv1);
-                c.a = 1.0;
-#endif
-
-#ifdef UNITY_COLORSPACE_GAMMA
-                return c;
-#else
-                return fixed4(GammaToLinearSpace(c.rgb), c.a);
-#endif	
+                // sample texture and return it
+                fixed4 col = tex2D(_MainTex, i.uv);
+				
+            #ifdef UNITY_COLORSPACE_GAMMA
+                return col;
+            #else
+                return fixed4(GammaToLinearSpace(col.rgb), col.a);
+            #endif	
             }
-#else
-            half4 frag(v2f i) : COLOR
-            {
-                half4 c = tex2D(_MainTex, i.uv);
-
-                c.rgb = c.rgb;
-                c.a = 1.0;
-
-#ifdef UNITY_COLORSPACE_GAMMA
-                return c;
-#else
-                return fixed4(GammaToLinearSpace(c.rgb), c.a);
-#endif	
-            }
-#endif
             ENDCG
         }
     }
-        Fallback "Legacy Shaders/Diffuse"
+    Fallback "Legacy Shaders/Diffuse"
 }
