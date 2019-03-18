@@ -33,7 +33,7 @@ public class DestroyContactObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("HITTT");
+        //debug.Log("HITTT");
         isCollider = true;
         colliderObject = collision.gameObject;
     }
