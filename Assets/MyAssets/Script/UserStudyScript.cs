@@ -19,6 +19,8 @@ public class UserStudyScript: MonoBehaviour
 
     private float deviceMovementDistance =0f;
 
+    private float overallTime;
+
     public GameObject SlidARPP;
     public GameObject Hybrid;
     private SlidARPPController slidARScript;
@@ -183,12 +185,14 @@ public class UserStudyScript: MonoBehaviour
                 }
 
                 MeasureDeviceMovement();
+                overallTime += Time.deltaTime;
 
             }
             if (authoringModeTimerOn)
             {
                 authoringModeTimer += Time.deltaTime;
                 authoring_Mode_timerText.GetComponent<Text>().text = authoringModeTimer.ToString("F2") + " S";
+                overallTime += Time.deltaTime;
             }
         }
     }
@@ -320,6 +324,7 @@ public class UserStudyScript: MonoBehaviour
         }*/
         if (!IsFinish())
         {
+            userstudyUI.RefreshCamera();
             //Debug.Log("Next target :"+count);
             EnableTargetObject(count);
         }
@@ -349,7 +354,7 @@ public class UserStudyScript: MonoBehaviour
 
     private void SaveCurrentData()
     {
-        dDAS.SaveTrialData(authoringModeTimer, editModeTimer, deviceMovementDistance,count);
+        dDAS.SaveTrialData(authoringModeTimer, editModeTimer, deviceMovementDistance,count,overallTime);
     }
     
 
