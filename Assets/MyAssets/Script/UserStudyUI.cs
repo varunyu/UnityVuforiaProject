@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Vuforia;
 
 public class UserStudyUI : MonoBehaviour
 {
@@ -20,12 +19,6 @@ public class UserStudyUI : MonoBehaviour
     [SerializeField]
     private GameObject time_Out_Object;
     // Start is called before the first frame update
-
-    [SerializeField]
-    private Camera mainCam;
-
-    [SerializeField]
-    private GameObject loadingPannel;
     void Start()
     {
 
@@ -80,28 +73,5 @@ public class UserStudyUI : MonoBehaviour
     public void ShowTimeOutText(bool b)
     {
         time_Out_Object.SetActive(b);
-    }
-
-    public void RefreshCamera()
-    {
-        mainCam.gameObject.SetActive(false);
-        loadingPannel.SetActive(true);
-        mainCam.gameObject.SetActive(true);
-        //loadingPannel.SetActive(false);
-        Invoke("DeactiveLoadingPannel", 1.5f);
-    }
-
-    public void RestartTracking()
-    {
-        TrackerManager.Instance.GetTracker<ObjectTracker>().Stop();
-        loadingPannel.SetActive(true);
-        TrackerManager.Instance.GetTracker<ObjectTracker>().Start();
-        //Invoke("DeactiveLoadingPannel",2);
-
-    }
-
-    private void DeactiveLoadingPannel()
-    {
-        loadingPannel.SetActive(false);
     }
 }

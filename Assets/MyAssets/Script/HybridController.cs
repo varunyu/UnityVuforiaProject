@@ -56,9 +56,6 @@ public class HybridController : MonoBehaviour {
 
     private bool lockPosition = false;
 
-    [SerializeField]
-    private GameObject[] pickUpUI;
-
     void Start () {
         currState = AppState.NONE;
         traAIni = (TranslationAndIntial)gameObject.GetComponent(typeof(TranslationAndIntial));
@@ -244,7 +241,7 @@ public class HybridController : MonoBehaviour {
                     }
                 }*/
                 ChangeState(3);
-                PickUpUI();
+
                 return true;
             }
         }
@@ -325,14 +322,5 @@ public class HybridController : MonoBehaviour {
     public void LockPosition(bool t)
     {
         lockPosition = t;
-    }
-
-    private void PickUpUI()
-    {
-        pickUpUI[0].SetActive(true);
-        pickUpUI[1].SetActive(false);
-        pickUpUI[2].SetActive(true);
-        pickUpUI[3].SetActive(false);
-
     }
 }
