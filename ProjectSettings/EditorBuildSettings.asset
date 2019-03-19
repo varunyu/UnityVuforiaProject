@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/OpenCampus.unity
     guid: 24e42f87495c046c2a6e70569641bd6a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tutorial.unity
     guid: 582b9af101df54333970196f87d99936
   m_configObjects: {}
