@@ -745,9 +745,6 @@ Transform:
 --- !u!1 &276957865
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 0a4b7d2... update
-=======
 >>>>>>> parent of 0a4b7d2... update
 =======
 >>>>>>> parent of 0a4b7d2... update
@@ -2806,6 +2803,7 @@ CanvasRenderer:
 =======
 =======
 =======
+<<<<<<< HEAD
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2860,15 +2858,20 @@ GameObject:
   m_SortingOrder: 0
 --- !u!33 &546213280
 MeshFilter:
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 546213276}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &550889002
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_GameObject: {fileID: 713144799}
   m_CullTransparentMesh: 0
 --- !u!4 &717227360 stripped
@@ -2878,6 +2881,7 @@ Transform:
   m_PrefabInstance: {fileID: 81343823420567758}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &763119772
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   m_GameObject: {fileID: 763119772}
@@ -2896,11 +2900,30 @@ Transform:
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
+=======
+GameObject:
+>>>>>>> parent of 0a4b7d2... update
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+  m_GameObject: {fileID: 713144799}
+  m_CullTransparentMesh: 0
+--- !u!4 &717227360 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 81343824053908910, guid: e2525e9896f784b0980c2390bd2953d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 81343823420567758}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &763119772
+>>>>>>> parent of e356736... Update Tutorial.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   serializedVersion: 6
@@ -2923,6 +2946,8 @@ GameObject:
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
   m_GameObject: {fileID: 713144799}
@@ -2952,6 +2977,7 @@ MonoBehaviour:
 --- !u!1 &763119772
 GameObject:
 >>>>>>> parent of 0a4b7d2... update
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   serializedVersion: 6
@@ -3015,6 +3041,8 @@ MeshRenderer:
   colliderObject: {fileID: 0}
 --- !u!54 &550889005
 Rigidbody:
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3034,6 +3062,9 @@ MonoBehaviour:
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
   m_GameObject: {fileID: 713144799}
@@ -3089,10 +3120,13 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 550889002}
   m_Enabled: 0
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
   m_GameObject: {fileID: 763119772}
@@ -3112,9 +3146,12 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 550889002}
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
   m_GameObject: {fileID: 763119772}
@@ -3133,9 +3170,12 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 550889002}
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
   m_GameObject: {fileID: 763119772}
@@ -3402,8 +3442,11 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 627218816}
 =======
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_GameObject: {fileID: 772481812}
 >>>>>>> parent of e356736... Update Tutorial.unity
   m_Enabled: 1
@@ -3450,6 +3493,9 @@ MeshFilter:
   m_GameObject: {fileID: 772481812}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &784771226
+<<<<<<< HEAD
+>>>>>>> parent of e356736... Update Tutorial.unity
+=======
 >>>>>>> parent of e356736... Update Tutorial.unity
 GameObject:
   m_ObjectHideFlags: 0
@@ -3459,15 +3505,21 @@ GameObject:
   serializedVersion: 6
   m_Component:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - component: {fileID: 628544985}
   - component: {fileID: 628544988}
   - component: {fileID: 628544987}
   - component: {fileID: 628544986}
 =======
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
   - component: {fileID: 784771227}
   - component: {fileID: 784771230}
   - component: {fileID: 784771229}
   - component: {fileID: 784771228}
+<<<<<<< HEAD
+>>>>>>> parent of e356736... Update Tutorial.unity
+=======
 >>>>>>> parent of e356736... Update Tutorial.unity
   m_Layer: 0
   m_Name: Cube
@@ -3476,8 +3528,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_IsActive: 1
 --- !u!4 &628544985
+=======
+  m_IsActive: 0
+--- !u!4 &784771227
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
   m_IsActive: 0
 --- !u!4 &784771227
@@ -3488,7 +3545,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 628544984}
+=======
+  m_GameObject: {fileID: 784771226}
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
   m_GameObject: {fileID: 784771226}
 >>>>>>> parent of e356736... Update Tutorial.unity
@@ -3496,6 +3557,7 @@ Transform:
   m_LocalPosition: {x: 0.104, y: 0.976, z: 0}
   m_LocalScale: {x: 0.31063077, y: 0.17891061, z: 0.10935923}
   m_Children: []
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_Father: {fileID: 1201515384}
   m_RootOrder: 2
@@ -3506,6 +3568,11 @@ BoxCollider:
   m_Father: {fileID: 604738872}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+  m_Father: {fileID: 604738872}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> parent of e356736... Update Tutorial.unity
 --- !u!64 &784771228
 MeshCollider:
 >>>>>>> parent of e356736... Update Tutorial.unity
@@ -3513,6 +3580,7 @@ MeshCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 628544984}
   m_Material: {fileID: 0}
@@ -3523,6 +3591,8 @@ MeshCollider:
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &628544987
 =======
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_GameObject: {fileID: 784771226}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -3532,6 +3602,9 @@ MeshCollider:
   m_CookingOptions: 14
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &784771229
+<<<<<<< HEAD
+>>>>>>> parent of e356736... Update Tutorial.unity
+=======
 >>>>>>> parent of e356736... Update Tutorial.unity
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3539,7 +3612,11 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 628544984}
+=======
+  m_GameObject: {fileID: 784771226}
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
   m_GameObject: {fileID: 784771226}
 >>>>>>> parent of e356736... Update Tutorial.unity
@@ -3574,7 +3651,11 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!33 &628544988
+=======
+--- !u!33 &784771230
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 --- !u!33 &784771230
 >>>>>>> parent of e356736... Update Tutorial.unity
@@ -3584,9 +3665,15 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 628544984}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &628788337
+=======
+  m_GameObject: {fileID: 784771226}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &792622478
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
   m_GameObject: {fileID: 784771226}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
@@ -3600,23 +3687,40 @@ GameObject:
   serializedVersion: 6
   m_Component:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - component: {fileID: 628788338}
   - component: {fileID: 628788341}
   - component: {fileID: 628788340}
   - component: {fileID: 628788339}
   m_Layer: 0
   m_Name: arrow
+=======
+  - component: {fileID: 792622479}
+  - component: {fileID: 792622484}
+  - component: {fileID: 792622483}
+  - component: {fileID: 792622482}
+  - component: {fileID: 792622481}
+  - component: {fileID: 792622480}
+  m_Layer: 0
+  m_Name: Arrow (3)
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< HEAD
   m_IsActive: 1
 --- !u!4 &628788338
+=======
+  m_IsActive: 0
+--- !u!4 &792622479
+>>>>>>> parent of e356736... Update Tutorial.unity
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 628788337}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.89, z: 0}
@@ -3628,10 +3732,29 @@ Transform:
 --- !u!95 &628788339
 Animator:
   serializedVersion: 3
+=======
+  m_GameObject: {fileID: 792622478}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.42, y: 22.5, z: -6.71}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_Children:
+  - {fileID: 1250095106}
+  - {fileID: 1252891923}
+  - {fileID: 181238525}
+  m_Father: {fileID: 220703879}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &792622480
+Rigidbody:
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 628788337}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: a070220b567180c46b24ba3be0279b1f, type: 3}
@@ -3646,10 +3769,25 @@ Animator:
   m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!23 &628788340
 MeshRenderer:
+=======
+  m_GameObject: {fileID: 792622478}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &792622481
+MonoBehaviour:
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 628788337}
   m_Enabled: 1
   m_CastShadows: 1
@@ -3850,6 +3988,64 @@ Mesh:
     size: 0
     path: 
 --- !u!1 &655295668
+=======
+  m_GameObject: {fileID: 792622478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b5bbcb4be71461ebef98671514bcd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliderObject: {fileID: 0}
+--- !u!114 &792622482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+  m_GameObject: {fileID: 628788337}
+  m_Mesh: {fileID: 4300000, guid: a070220b567180c46b24ba3be0279b1f, type: 3}
+--- !u!1 &655295668
+=======
+  m_GameObject: {fileID: 792622478}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddabc2e54479e43e589b4057bd798b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineMat: {fileID: 2100000, guid: ebe36a227b6b147f6ac4282bfbce34f5, type: 2}
+  shadowPlane: {fileID: 1252891922}
+--- !u!65 &792622483
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792622478}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.44, y: 1.39, z: 0.19}
+  m_Center: {x: 0, y: 0.72, z: 0}
+--- !u!114 &792622484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792622478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0403ce42c258a463da3173a93d6dd2be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScale: 0.013
+  initialScale: {x: 0, y: 0, z: 0}
+  cam: {fileID: 0}
+--- !u!1 &812938175
+>>>>>>> parent of 0a4b7d2... update
+>>>>>>> parent of e356736... Update Tutorial.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4075,9 +4271,15 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 664151467}
   m_CullTransparentMesh: 0
 --- !u!1 &694468461
+=======
+  m_GameObject: {fileID: 884113262}
+  m_CullTransparentMesh: 0
+--- !u!1 &908040805
+>>>>>>> parent of e356736... Update Tutorial.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4225,9 +4427,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 713144800}
   - component: {fileID: 713144802}
   - component: {fileID: 713144801}
+=======
+  - component: {fileID: 924143932}
+  - component: {fileID: 924143934}
+  - component: {fileID: 924143933}
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_Layer: 5
   m_Name: AddPanel
   m_TagString: Untagged
@@ -4433,22 +4641,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 729061860}
   - component: {fileID: 729061862}
   - component: {fileID: 729061861}
   m_Layer: 0
   m_Name: Cube (4)
+=======
+  - component: {fileID: 947329270}
+  - component: {fileID: 947329272}
+  - component: {fileID: 947329271}
+  m_Layer: 5
+  m_Name: Text
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &729061860
 Transform:
+=======
+--- !u!224 &947329270
+RectTransform:
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 729061859}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.52, y: 0.44, z: 11.87}
@@ -4459,10 +4681,28 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &729061861
 MeshRenderer:
+=======
+  m_GameObject: {fileID: 947329269}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1431292041}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.5999985, y: -0.20000076}
+  m_SizeDelta: {x: -19, y: -5.8}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &947329271
+MonoBehaviour:
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 729061859}
   m_Enabled: 1
   m_CastShadows: 1
@@ -4496,13 +4736,51 @@ MeshRenderer:
   m_SortingOrder: 0
 --- !u!33 &729061862
 MeshFilter:
+=======
+  m_GameObject: {fileID: 947329269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Back
+--- !u!222 &947329272
+CanvasRenderer:
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 729061859}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &763119772
+=======
+  m_GameObject: {fileID: 947329269}
+  m_CullTransparentMesh: 0
+--- !u!1 &1030243011
+>>>>>>> parent of e356736... Update Tutorial.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4510,6 +4788,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 763119776}
   - component: {fileID: 763119775}
   - component: {fileID: 763119774}
@@ -4517,17 +4796,69 @@ GameObject:
   m_Layer: 9
   m_Name: Arrow
   m_TagString: 3DModel
+=======
+  - component: {fileID: 1030243012}
+  - component: {fileID: 1030243017}
+  - component: {fileID: 1030243016}
+  - component: {fileID: 1030243015}
+  - component: {fileID: 1030243014}
+  - component: {fileID: 1030243013}
+  m_Layer: 0
+  m_Name: Arrow (1)
+  m_TagString: Untagged
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+<<<<<<< HEAD
 --- !u!114 &763119773
+=======
+--- !u!4 &1030243012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030243011}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.7, y: 25.7, z: 3.4}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_Children:
+  - {fileID: 285540195}
+  - {fileID: 451429836}
+  - {fileID: 1322114234}
+  m_Father: {fileID: 220703879}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1030243013
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030243011}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1030243014
+>>>>>>> parent of e356736... Update Tutorial.unity
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 763119772}
+=======
+  m_GameObject: {fileID: 1030243011}
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ddabc2e54479e43e589b4057bd798b0c, type: 3}
@@ -4548,13 +4879,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.44, y: 1.39, z: 0.19}
   m_Center: {x: 0, y: 0.72, z: 0}
+<<<<<<< HEAD
 --- !u!114 &763119775
+=======
+--- !u!114 &1030243017
+>>>>>>> parent of e356736... Update Tutorial.unity
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 763119772}
+=======
+  m_GameObject: {fileID: 1030243011}
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0403ce42c258a463da3173a93d6dd2be, type: 3}
@@ -4632,7 +4971,11 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 772481812}
+=======
+  m_GameObject: {fileID: 1095481027}
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -4660,6 +5003,22 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 1253494900}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+>>>>>>> parent of 0a4b7d2... update
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -4800,7 +5159,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814884160}
   m_CullTransparentMesh: 0
+<<<<<<< HEAD
 --- !u!1 &834535611
+=======
+--- !u!1 &1030243011
+>>>>>>> parent of 0a4b7d2... update
+>>>>>>> parent of e356736... Update Tutorial.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4808,12 +5172,30 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 834535612}
   - component: {fileID: 834535615}
   - component: {fileID: 834535614}
   - component: {fileID: 834535613}
   m_Layer: 0
   m_Name: ShadowPlane
+=======
+<<<<<<< HEAD
+  - component: {fileID: 1250095106}
+  - component: {fileID: 1250095109}
+  - component: {fileID: 1250095108}
+  - component: {fileID: 1250095107}
+=======
+  - component: {fileID: 1030243012}
+  - component: {fileID: 1030243017}
+  - component: {fileID: 1030243016}
+  - component: {fileID: 1030243015}
+  - component: {fileID: 1030243014}
+  - component: {fileID: 1030243013}
+>>>>>>> parent of 0a4b7d2... update
+  m_Layer: 0
+  m_Name: Arrow (1)
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4825,7 +5207,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 834535611}
+=======
+  m_GameObject: {fileID: 1030243011}
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
@@ -4855,6 +5241,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834535611}
   m_Enabled: 1
+<<<<<<< HEAD
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -4886,13 +5273,62 @@ MeshRenderer:
   m_SortingOrder: 0
 --- !u!33 &834535615
 MeshFilter:
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b5bbcb4be71461ebef98671514bcd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliderObject: {fileID: 0}
+--- !u!114 &1030243015
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030243011}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddabc2e54479e43e589b4057bd798b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineMat: {fileID: 2100000, guid: ebe36a227b6b147f6ac4282bfbce34f5, type: 2}
+  shadowPlane: {fileID: 451429835}
+--- !u!65 &1030243016
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030243011}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.44, y: 1.39, z: 0.19}
+  m_Center: {x: 0, y: 0.72, z: 0}
+--- !u!114 &1030243017
+MonoBehaviour:
+>>>>>>> parent of e356736... Update Tutorial.unity
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 834535611}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &843823491
+=======
+  m_GameObject: {fileID: 1030243011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0403ce42c258a463da3173a93d6dd2be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScale: 0.013
+  initialScale: {x: 0, y: 0, z: 0}
+  cam: {fileID: 0}
+--- !u!1 &1095481027
+>>>>>>> parent of e356736... Update Tutorial.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4900,6 +5336,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 843823492}
   - component: {fileID: 843823495}
   - component: {fileID: 843823494}
@@ -4998,10 +5435,19 @@ GameObject:
   - component: {fileID: 884113264}
   m_Layer: 5
   m_Name: CAHB
+=======
+  - component: {fileID: 1095481028}
+  - component: {fileID: 1095481031}
+  - component: {fileID: 1095481030}
+  - component: {fileID: 1095481029}
+  m_Layer: 9
+  m_Name: arrow
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< HEAD
   m_IsActive: 0
 --- !u!224 &884113263
 RectTransform:
@@ -8667,6 +9113,15 @@ CanvasRenderer:
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
 GameObject:
+=======
+  m_IsActive: 1
+<<<<<<< HEAD
+--- !u!4 &1250095106
+=======
+--- !u!4 &1095481028
+>>>>>>> parent of 0a4b7d2... update
+Transform:
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -8679,6 +9134,7 @@ GameObject:
   - component: {fileID: 1281534488}
   - component: {fileID: 1281534487}
 =======
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   - component: {fileID: 1253494901}
@@ -8724,11 +9180,22 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 1281534485}
+=======
+  m_GameObject: {fileID: 1250095105}
+=======
+  m_GameObject: {fileID: 1095481027}
+>>>>>>> parent of 0a4b7d2... update
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.89, z: 0}
   m_LocalScale: {x: 9.329318, y: 14.007413, z: 20.113768}
   m_Children: []
+<<<<<<< HEAD
   m_Father: {fileID: 1187179974}
+=======
+<<<<<<< HEAD
+  m_Father: {fileID: 792622479}
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!95 &1281534487
@@ -8750,6 +9217,7 @@ Animator:
 MeshCollider:
 <<<<<<< HEAD
 >>>>>>> parent of 0a4b7d2... update
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 0a4b7d2... update
 <<<<<<< HEAD
@@ -8766,10 +9234,15 @@ MonoBehaviour:
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
+=======
+Animator:
+  serializedVersion: 3
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 1281534485}
 =======
@@ -8790,6 +9263,12 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
+=======
+  m_GameObject: {fileID: 1250095105}
+=======
+  m_GameObject: {fileID: 1095481027}
+>>>>>>> parent of 0a4b7d2... update
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: a070220b567180c46b24ba3be0279b1f, type: 3}
   m_Controller: {fileID: 0}
@@ -8804,11 +9283,16 @@ MonoBehaviour:
 --- !u!23 &1281534488
 MeshRenderer:
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> parent of 0a4b7d2... update
 =======
+--- !u!23 &1250095108
+>>>>>>> parent of e356736... Update Tutorial.unity
+=======
 >>>>>>> parent of 0a4b7d2... update
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   m_GameObject: {fileID: 1253494896}
@@ -8825,10 +9309,14 @@ AudioListener:
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
+=======
+MeshRenderer:
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 1281534485}
 =======
@@ -8849,6 +9337,12 @@ AudioListener:
 >>>>>>> parent of 0a4b7d2... update
   m_GameObject: {fileID: 1252891922}
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
+=======
+  m_GameObject: {fileID: 1250095105}
+=======
+  m_GameObject: {fileID: 1095481027}
+>>>>>>> parent of 0a4b7d2... update
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -8879,6 +9373,7 @@ AudioListener:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!33 &1281534489
 MeshFilter:
@@ -8953,6 +9448,9 @@ AudioListener:
 <<<<<<< HEAD
 >>>>>>> parent of 0a4b7d2... update
 =======
+--- !u!33 &1250095109
+>>>>>>> parent of e356736... Update Tutorial.unity
+=======
 >>>>>>> parent of 0a4b7d2... update
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9002,15 +9500,20 @@ Transform:
 --- !u!20 &1253494900
 Camera:
 >>>>>>> parent of 0a4b7d2... update
+<<<<<<< HEAD
 =======
 --- !u!20 &1253494900
 Camera:
 >>>>>>> parent of 0a4b7d2... update
+=======
+MeshFilter:
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253494896}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -9313,6 +9816,17 @@ CanvasRenderer:
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
+=======
+  m_GameObject: {fileID: 1250095105}
+  m_Mesh: {fileID: 4300000, guid: a070220b567180c46b24ba3be0279b1f, type: 3}
+--- !u!1 &1252891922
+=======
+=======
+>>>>>>> parent of 0a4b7d2... update
+  m_GameObject: {fileID: 1095481027}
+  m_Mesh: {fileID: 4300000, guid: a070220b567180c46b24ba3be0279b1f, type: 3}
+--- !u!1 &1099715065
+>>>>>>> parent of e356736... Update Tutorial.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9320,23 +9834,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 1372935774}
   - component: {fileID: 1372935777}
   - component: {fileID: 1372935776}
   - component: {fileID: 1372935775}
   m_Layer: 0
   m_Name: arrow
+=======
+  - component: {fileID: 1099715066}
+  - component: {fileID: 1099715071}
+  - component: {fileID: 1099715070}
+  - component: {fileID: 1099715069}
+  - component: {fileID: 1099715068}
+  - component: {fileID: 1099715067}
+  - component: {fileID: 1099715072}
+  m_Layer: 0
+  m_Name: Arrow (1)
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &1372935774
+=======
+--- !u!4 &1099715066
+>>>>>>> parent of e356736... Update Tutorial.unity
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1372935773}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.89, z: 0}
@@ -9348,10 +9879,69 @@ Transform:
 --- !u!95 &1372935775
 Animator:
   serializedVersion: 3
+=======
+  m_GameObject: {fileID: 1099715065}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11, y: 11, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_Children:
+  - {fileID: 1372935774}
+  - {fileID: 2038907807}
+  - {fileID: 772481813}
+  m_Father: {fileID: 1712935845}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1099715067
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099715065}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1099715068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099715065}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b5bbcb4be71461ebef98671514bcd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliderObject: {fileID: 0}
+--- !u!114 &1099715069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099715065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddabc2e54479e43e589b4057bd798b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineMat: {fileID: 2100000, guid: ebe36a227b6b147f6ac4282bfbce34f5, type: 2}
+  shadowPlane: {fileID: 2038907806}
+--- !u!65 &1099715070
+BoxCollider:
+>>>>>>> parent of e356736... Update Tutorial.unity
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1372935773}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: a070220b567180c46b24ba3be0279b1f, type: 3}
@@ -9366,10 +9956,22 @@ Animator:
   m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!23 &1372935776
 MeshRenderer:
+=======
+  m_GameObject: {fileID: 1099715065}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.44, y: 1.39, z: 0.19}
+  m_Center: {x: 0, y: 0.72, z: 0}
+--- !u!114 &1099715071
+MonoBehaviour:
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1372935773}
   m_Enabled: 1
   m_CastShadows: 1
@@ -9403,13 +10005,53 @@ MeshRenderer:
   m_SortingOrder: 0
 --- !u!33 &1372935777
 MeshFilter:
+=======
+  m_GameObject: {fileID: 1099715065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0403ce42c258a463da3173a93d6dd2be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScale: 0.013
+  initialScale: {x: 0, y: 0, z: 0}
+  cam: {fileID: 0}
+--- !u!114 &1099715072
+MonoBehaviour:
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1372935773}
   m_Mesh: {fileID: 4300000, guid: a070220b567180c46b24ba3be0279b1f, type: 3}
 --- !u!1 &1387533636
+=======
+  m_GameObject: {fileID: 1099715065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5adc319a44e4476b876e1819c26fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliderObject: {fileID: 0}
+--- !u!1 &1146337287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 265204592043657462, guid: f9eb81d133d434ec282ba8247700e582,
+    type: 3}
+  m_PrefabInstance: {fileID: 265204590906126577}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1146337288 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 265204592043657465, guid: f9eb81d133d434ec282ba8247700e582,
+    type: 3}
+  m_PrefabInstance: {fileID: 265204590906126577}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1250095105
+<<<<<<< HEAD
+>>>>>>> parent of 0a4b7d2... update
+=======
+>>>>>>> parent of 0a4b7d2... update
+>>>>>>> parent of e356736... Update Tutorial.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9417,10 +10059,30 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 1387533637}
   - component: {fileID: 1387533640}
   - component: {fileID: 1387533639}
   - component: {fileID: 1387533638}
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+  - component: {fileID: 1252891923}
+  - component: {fileID: 1252891926}
+  - component: {fileID: 1252891925}
+  - component: {fileID: 1252891924}
+=======
+=======
+>>>>>>> parent of 0a4b7d2... update
+  - component: {fileID: 1250095106}
+  - component: {fileID: 1250095109}
+  - component: {fileID: 1250095108}
+  - component: {fileID: 1250095107}
+<<<<<<< HEAD
+>>>>>>> parent of 0a4b7d2... update
+=======
+>>>>>>> parent of 0a4b7d2... update
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_Layer: 0
   m_Name: ShadowPlane
   m_TagString: Untagged
@@ -9428,13 +10090,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+<<<<<<< HEAD
 --- !u!4 &1387533637
+=======
+--- !u!4 &1252891923
+=======
+  m_IsActive: 1
+--- !u!4 &1250095106
+>>>>>>> parent of 0a4b7d2... update
+=======
+  m_IsActive: 1
+--- !u!4 &1250095106
+>>>>>>> parent of 0a4b7d2... update
+>>>>>>> parent of e356736... Update Tutorial.unity
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1387533636}
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+  m_GameObject: {fileID: 1252891922}
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
@@ -9448,7 +10128,12 @@ MeshCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1387533636}
+=======
+<<<<<<< HEAD
+  m_GameObject: {fileID: 1252891922}
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -9456,13 +10141,53 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
 --- !u!23 &1387533639
+=======
+--- !u!23 &1252891925
+=======
+=======
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> parent of 0a4b7d2... update
+  m_GameObject: {fileID: 1250095105}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: a070220b567180c46b24ba3be0279b1f, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!23 &1250095108
+<<<<<<< HEAD
+>>>>>>> parent of 0a4b7d2... update
+=======
+>>>>>>> parent of 0a4b7d2... update
+>>>>>>> parent of e356736... Update Tutorial.unity
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1387533636}
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+  m_GameObject: {fileID: 1252891922}
+=======
+  m_GameObject: {fileID: 1250095105}
+>>>>>>> parent of 0a4b7d2... update
+=======
+  m_GameObject: {fileID: 1250095105}
+>>>>>>> parent of 0a4b7d2... update
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -9493,14 +10218,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
 --- !u!33 &1387533640
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+--- !u!33 &1252891926
+=======
+--- !u!33 &1250095109
+>>>>>>> parent of 0a4b7d2... update
+=======
+--- !u!33 &1250095109
+>>>>>>> parent of 0a4b7d2... update
+>>>>>>> parent of e356736... Update Tutorial.unity
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 1387533636}
+=======
+<<<<<<< HEAD
+  m_GameObject: {fileID: 1252891922}
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1410231196
 =======
@@ -9508,9 +10250,12 @@ MeshFilter:
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1372935773
 >>>>>>> parent of 0a4b7d2... update
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 0a4b7d2... update
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9528,6 +10273,7 @@ GameObject:
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 0a4b7d2... update
   - component: {fileID: 1322114234}
@@ -9538,6 +10284,13 @@ GameObject:
   m_Name: Cube
 <<<<<<< HEAD
 =======
+  - component: {fileID: 1253494901}
+  - component: {fileID: 1253494900}
+  - component: {fileID: 1253494899}
+  - component: {fileID: 1253494898}
+  - component: {fileID: 1253494897}
+>>>>>>> parent of e356736... Update Tutorial.unity
+=======
   - component: {fileID: 1372935774}
   - component: {fileID: 1372935777}
   - component: {fileID: 1372935776}
@@ -9545,10 +10298,16 @@ GameObject:
   m_Layer: 0
   m_Name: arrow
 >>>>>>> parent of 0a4b7d2... update
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 0a4b7d2... update
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
   m_TagString: Untagged
+=======
+  m_Layer: 0
+  m_Name: ARCamera
+  m_TagString: MainCamera
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9559,7 +10318,12 @@ GameObject:
   m_IsActive: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!4 &1322114234
+=======
+--- !u!114 &1253494897
+MonoBehaviour:
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 --- !u!4 &1372935774
 >>>>>>> parent of 0a4b7d2... update
@@ -9567,17 +10331,23 @@ GameObject:
 --- !u!4 &1322114234
 >>>>>>> parent of 0a4b7d2... update
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!4 &1372935774
 >>>>>>> parent of 0a4b7d2... update
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
+=======
+  m_IsActive: 0
+--- !u!4 &1252891923
+>>>>>>> parent of e356736... Update Tutorial.unity
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 1410231196}
 =======
@@ -9587,6 +10357,9 @@ Transform:
 >>>>>>> parent of 0a4b7d2... update
   m_GameObject: {fileID: 1322114233}
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
+=======
+  m_GameObject: {fileID: 1252891922}
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
@@ -9595,12 +10368,32 @@ Transform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!64 &1410231198
 MeshCollider:
 =======
 --- !u!65 &1322114235
 BoxCollider:
 <<<<<<< HEAD
+=======
+>>>>>>> parent of 0a4b7d2... update
+=======
+>>>>>>> parent of 0a4b7d2... update
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD
+  m_GameObject: {fileID: 1253494896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47f92041efbb4b429a4eafca855ebe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1253494898
+MonoBehaviour:
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
   m_GameObject: {fileID: 1372935773}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
@@ -9631,13 +10424,33 @@ Animator:
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1410231199
 MeshRenderer:
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> parent of 0a4b7d2... update
+=======
+>>>>>>> parent of 0a4b7d2... update
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 1410231196}
+=======
+  m_GameObject: {fileID: 1253494896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1826476478, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mWorldCenterMode: 1
+  mWorldCenter: {fileID: 0}
+--- !u!81 &1253494899
+AudioListener:
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 <<<<<<< HEAD
 =======
@@ -9680,9 +10493,15 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1410231196}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1422297115
+=======
+  m_GameObject: {fileID: 1252891922}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1253494896
+>>>>>>> parent of e356736... Update Tutorial.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9690,10 +10509,18 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 1422297116}
   - component: {fileID: 1422297119}
   - component: {fileID: 1422297118}
   - component: {fileID: 1422297117}
+=======
+  - component: {fileID: 1253494901}
+  - component: {fileID: 1253494900}
+  - component: {fileID: 1253494899}
+  - component: {fileID: 1253494898}
+  - component: {fileID: 1253494897}
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_Layer: 0
   m_Name: arrow
   m_TagString: Untagged
@@ -9800,10 +10627,17 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 1431292041}
   - component: {fileID: 1431292044}
   - component: {fileID: 1431292043}
   - component: {fileID: 1431292042}
+=======
+  - component: {fileID: 1270803299}
+  - component: {fileID: 1270803302}
+  - component: {fileID: 1270803301}
+  - component: {fileID: 1270803300}
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -9871,15 +10705,66 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+<<<<<<< HEAD
       - m_Target: {fileID: 1509529169}
         m_MethodName: BackToMenu
         m_Mode: 1
+=======
+      - m_Target: {fileID: 114947302941570783}
+        m_MethodName: SelectObjectToCreate
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114947302941570783}
+        m_MethodName: SetIsObjectVerticalToG
+        m_Mode: 3
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of 0a4b7d2... update
+>>>>>>> parent of e356736... Update Tutorial.unity
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+<<<<<<< HEAD
+=======
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 114947302941570783}
+        m_MethodName: ChangeState
+        m_Mode: 3
+<<<<<<< HEAD
+>>>>>>> parent of 0a4b7d2... update
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 114947302941570783}
+        m_MethodName: ChangeState
+        m_Mode: 3
+=======
+>>>>>>> parent of 0a4b7d2... update
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+>>>>>>> parent of e356736... Update Tutorial.unity
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -9919,9 +10804,17 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1431292040}
   m_CullTransparentMesh: 0
 --- !u!1 &1438088229
+=======
+  m_GameObject: {fileID: 1270803298}
+  m_CullTransparentMesh: 0
+--- !u!1 &1322114233
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9929,10 +10822,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1438088230}
-  - component: {fileID: 1438088233}
-  - component: {fileID: 1438088232}
-  - component: {fileID: 1438088231}
+  - component: {fileID: 1322114234}
+  - component: {fileID: 1322114237}
+  - component: {fileID: 1322114236}
+  - component: {fileID: 1322114235}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -9940,13 +10833,152 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1438088230
+--- !u!4 &1322114234
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322114233}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.104, y: 0.976, z: 0}
+  m_LocalScale: {x: 0.31063077, y: 0.17891061, z: 0.10935923}
+  m_Children: []
+  m_Father: {fileID: 1030243012}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1322114235
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322114233}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1322114236
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322114233}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 6c31a4383b3104f6f9f7bb3e0773c21d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1322114237
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322114233}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1372935773
+>>>>>>> parent of 0a4b7d2... update
+=======
+>>>>>>> parent of 0a4b7d2... update
+>>>>>>> parent of e356736... Update Tutorial.unity
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+<<<<<<< HEAD
+  - component: {fileID: 1438088230}
+  - component: {fileID: 1438088233}
+  - component: {fileID: 1438088232}
+  - component: {fileID: 1438088231}
+  m_Layer: 0
+  m_Name: Cube
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 0a4b7d2... update
+  - component: {fileID: 1322114234}
+  - component: {fileID: 1322114237}
+  - component: {fileID: 1322114236}
+  - component: {fileID: 1322114235}
+  m_Layer: 0
+  m_Name: Cube
+<<<<<<< HEAD
+=======
+  - component: {fileID: 1372935774}
+  - component: {fileID: 1372935777}
+  - component: {fileID: 1372935776}
+  - component: {fileID: 1372935775}
+  m_Layer: 0
+  m_Name: arrow
+>>>>>>> parent of 0a4b7d2... update
+=======
+>>>>>>> parent of 0a4b7d2... update
+>>>>>>> parent of e356736... Update Tutorial.unity
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+<<<<<<< HEAD
+--- !u!4 &1438088230
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+--- !u!4 &1322114234
+=======
+--- !u!4 &1372935774
+>>>>>>> parent of 0a4b7d2... update
+=======
+--- !u!4 &1322114234
+>>>>>>> parent of 0a4b7d2... update
+>>>>>>> parent of e356736... Update Tutorial.unity
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1438088229}
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 0a4b7d2... update
+  m_GameObject: {fileID: 1322114233}
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.104, y: 0.976, z: 0}
   m_LocalScale: {x: 0.31063077, y: 0.17891061, z: 0.10935923}
@@ -9956,6 +10988,25 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1438088231
 BoxCollider:
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+  m_GameObject: {fileID: 1372935773}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.89, z: 0}
+  m_LocalScale: {x: 9.329318, y: 14.007413, z: 20.113768}
+  m_Children: []
+  m_Father: {fileID: 1099715066}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!95 &1372935775
+Animator:
+  serializedVersion: 3
+>>>>>>> parent of 0a4b7d2... update
+=======
+>>>>>>> parent of 0a4b7d2... update
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -9973,7 +11024,11 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1438088229}
+=======
+  m_GameObject: {fileID: 1322114233}
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -10057,11 +11112,38 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8089340510475372567}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &1491146389 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8089340509550468738, guid: bfa03a5f89802439e8578a1b1d4c7242,
     type: 3}
   m_PrefabInstance: {fileID: 8089340510475372567}
+=======
+  m_GameObject: {fileID: 1372935773}
+  m_Enabled: 1
+<<<<<<< HEAD
+=======
+  m_GameObject: {fileID: 1372935773}
+  m_Enabled: 1
+>>>>>>> parent of 0a4b7d2... update
+=======
+>>>>>>> parent of 0a4b7d2... update
+  m_Avatar: {fileID: 9000000, guid: a070220b567180c46b24ba3be0279b1f, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!23 &1372935776
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491146387}
   m_Enabled: 1
@@ -10275,6 +11357,7 @@ MeshFilter:
 --- !u!1 &1470663578
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 GameObject:
   m_ObjectHideFlags: 0
@@ -10312,6 +11395,8 @@ Transform:
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10319,6 +11404,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   - component: {fileID: 1548012897}
@@ -10348,10 +11434,16 @@ GameObject:
   m_Layer: 0
   m_Name: TargetList
 >>>>>>> parent of e356736... Update Tutorial.unity
+=======
+  - component: {fileID: 1470663579}
+  m_Layer: 0
+  m_Name: TargetList
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   m_IsActive: 0
@@ -10359,6 +11451,8 @@ GameObject:
 RectTransform:
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
   m_IsActive: 1
@@ -10371,9 +11465,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 1548012896}
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
   m_GameObject: {fileID: 1470663578}
@@ -10382,6 +11479,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   - {fileID: 924143932}
@@ -10397,11 +11495,14 @@ Transform:
 >>>>>>> parent of 0a4b7d2... update
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
   - {fileID: 555538558}
   - {fileID: 812938176}
   - {fileID: 1589689170}
   m_Father: {fileID: 220703879}
   m_RootOrder: 4
+<<<<<<< HEAD
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -10410,6 +11511,66 @@ Transform:
   m_SizeDelta: {x: 124.4, y: 29.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1548012898
+=======
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1483732494
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483732492}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1483732495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483732492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b5bbcb4be71461ebef98671514bcd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliderObject: {fileID: 0}
+--- !u!114 &1483732496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483732492}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddabc2e54479e43e589b4057bd798b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineMat: {fileID: 2100000, guid: ebe36a227b6b147f6ac4282bfbce34f5, type: 2}
+  shadowPlane: {fileID: 812938175}
+--- !u!65 &1483732497
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483732492}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.44, y: 1.39, z: 0.19}
+  m_Center: {x: 0, y: 0.72, z: 0}
+--- !u!114 &1483732498
+>>>>>>> parent of e356736... Update Tutorial.unity
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10544,7 +11705,10 @@ CanvasRenderer:
 --- !u!1 &1509529166
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
 GameObject:
@@ -10734,9 +11898,12 @@ CanvasRenderer:
   scoringPannel: {fileID: 0}
 --- !u!1 &1548012896
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 0a4b7d2... update
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
 GameObject:
@@ -10746,6 +11913,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   - component: {fileID: 1612557116}
@@ -10761,12 +11929,15 @@ GameObject:
 <<<<<<< HEAD
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
   - component: {fileID: 1548012897}
   - component: {fileID: 1548012900}
   - component: {fileID: 1548012899}
   - component: {fileID: 1548012898}
   m_Layer: 5
   m_Name: Rotation_On
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   - component: {fileID: 1509529168}
@@ -10779,15 +11950,20 @@ GameObject:
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_IsActive: 1
 --- !u!4 &1612557116
 Transform:
 =======
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_IsActive: 0
 --- !u!224 &1548012897
 RectTransform:
@@ -10821,10 +11997,13 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1548012898
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!114 &1509529167
 >>>>>>> parent of 0a4b7d2... update
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
 MonoBehaviour:
@@ -10834,15 +12013,19 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 1612557115}
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
   m_GameObject: {fileID: 1548012896}
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: 7d5adc319a44e4476b876e1819c26fd8, type: 3}
@@ -10868,6 +12051,9 @@ Rigidbody:
 --- !u!114 &1612557119
 =======
   m_Script: {fileID: 11500000, guid: 44827384525a94b2fa86a707469db8d9, type: 3}
+=======
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 >>>>>>> parent of e356736... Update Tutorial.unity
@@ -11038,9 +12224,12 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!224 &1650050669
 RectTransform:
 =======
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 --- !u!4 &1557516028
 Transform:
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
@@ -11048,6 +12237,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 1650050668}
@@ -11060,6 +12250,8 @@ Transform:
   m_RootOrder: 4
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
   m_GameObject: {fileID: 1557516027}
@@ -11211,6 +12403,7 @@ MonoBehaviour:
 =======
 --- !u!114 &1548012899
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   m_GameObject: {fileID: 1509529166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -11225,6 +12418,8 @@ MonoBehaviour:
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11232,10 +12427,13 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 1650050668}
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
   m_GameObject: {fileID: 1557516027}
@@ -11302,6 +12500,7 @@ CanvasRenderer:
 =======
 >>>>>>> parent of 0a4b7d2... update
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   finishText: {fileID: 0}
   time_Out_Object: {fileID: 0}
@@ -11311,10 +12510,13 @@ MonoBehaviour:
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 1650050668}
@@ -11325,6 +12527,8 @@ MonoBehaviour:
 <<<<<<< HEAD
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_GameObject: {fileID: 1557516027}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1588915351
@@ -11333,6 +12537,7 @@ MonoBehaviour:
   m_CullTransparentMesh: 0
 --- !u!1 &1557516027
 >>>>>>> parent of 0a4b7d2... update
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   m_GameObject: {fileID: 1509529166}
@@ -11349,6 +12554,8 @@ MonoBehaviour:
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11356,6 +12563,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   - component: {fileID: 1708651286}
@@ -11369,11 +12577,14 @@ GameObject:
 <<<<<<< HEAD
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
   - component: {fileID: 1588915352}
   - component: {fileID: 1588915354}
   - component: {fileID: 1588915353}
   m_Layer: 5
   m_Name: Text
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   - component: {fileID: 1548012897}
@@ -11386,10 +12597,13 @@ GameObject:
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   m_IsActive: 0
@@ -11407,12 +12621,15 @@ GameObject:
   m_IsActive: 1
 --- !u!224 &1588915352
 >>>>>>> parent of e356736... Update Tutorial.unity
+=======
+  m_IsActive: 1
+--- !u!224 &1588915352
+>>>>>>> parent of e356736... Update Tutorial.unity
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 1708651285}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
@@ -11495,6 +12712,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1548012896}
         m_MethodName: SetActive
         m_Mode: 6
+<<<<<<< HEAD
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11549,6 +12767,8 @@ MonoBehaviour:
       - m_Target: {fileID: 114947302941570783}
         m_MethodName: DebugAddObject
         m_Mode: 1
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11894,9 +13114,12 @@ CanvasRenderer:
 --- !u!1 &1588915351
 >>>>>>> parent of 0a4b7d2... update
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 0a4b7d2... update
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
 GameObject:
@@ -11914,6 +13137,9 @@ GameObject:
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
   - component: {fileID: 1557516028}
   - component: {fileID: 1557516031}
   - component: {fileID: 1557516030}
@@ -11931,6 +13157,9 @@ GameObject:
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 --- !u!4 &1557516028
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
 Transform:
@@ -11951,7 +13180,6 @@ Transform:
 Animator:
   serializedVersion: 3
 =======
-<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 1557516027}
 =======
@@ -11999,6 +13227,9 @@ MeshRenderer:
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_GameObject: {fileID: 1557516027}
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
   m_Enabled: 1
@@ -12039,12 +13270,15 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 1734649762}
   m_Mesh: {fileID: 4300000, guid: a070220b567180c46b24ba3be0279b1f, type: 3}
 --- !u!1 &1738960822
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
   m_GameObject: {fileID: 1557516027}
@@ -12068,12 +13302,15 @@ Camera:
 --- !u!1 &1608318031
 >>>>>>> parent of 0a4b7d2... update
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   m_GameObject: {fileID: 1557516027}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1588915351
 >>>>>>> parent of 0a4b7d2... update
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
 GameObject:
@@ -12085,6 +13322,7 @@ GameObject:
   m_Component:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - component: {fileID: 1738960823}
   - component: {fileID: 1738960826}
   - component: {fileID: 1738960825}
@@ -12094,6 +13332,8 @@ GameObject:
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
   - component: {fileID: 1588915352}
@@ -12114,6 +13354,7 @@ GameObject:
   m_IsActive: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!4 &1738960823
 Transform:
 =======
@@ -12123,6 +13364,10 @@ Transform:
 >>>>>>> parent of e356736... Update Tutorial.unity
 --- !u!224 &1588915352
 =======
+=======
+--- !u!224 &1588915352
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 --- !u!224 &1608318032
 >>>>>>> parent of 0a4b7d2... update
 RectTransform:
@@ -12133,10 +13378,13 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 1738960822}
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
   m_GameObject: {fileID: 1588915351}
@@ -12144,16 +13392,20 @@ RectTransform:
   m_GameObject: {fileID: 1608318031}
 >>>>>>> parent of 0a4b7d2... update
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   m_GameObject: {fileID: 1588915351}
 >>>>>>> parent of 0a4b7d2... update
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.104, y: 0.976, z: 0}
   m_LocalScale: {x: 0.31063077, y: 0.17891061, z: 0.10935923}
   m_Children: []
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   m_Father: {fileID: 715387208}
@@ -12168,6 +13420,10 @@ BoxCollider:
 >>>>>>> parent of e356736... Update Tutorial.unity
   m_Father: {fileID: 1905112988}
 =======
+=======
+  m_Father: {fileID: 1905112988}
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_Father: {fileID: 1270803299}
 >>>>>>> parent of 0a4b7d2... update
   m_RootOrder: 0
@@ -12188,6 +13444,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 1738960822}
   m_Material: {fileID: 0}
@@ -12237,6 +13494,8 @@ MeshRenderer:
 MeshFilter:
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
   m_GameObject: {fileID: 1588915351}
   m_Enabled: 1
 =======
@@ -12279,12 +13538,15 @@ CanvasRenderer:
 =======
 >>>>>>> parent of 0a4b7d2... update
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   m_Text: CArrow_Vertical
 --- !u!222 &1588915354
 CanvasRenderer:
 >>>>>>> parent of 0a4b7d2... update
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
   m_ObjectHideFlags: 0
@@ -12296,7 +13558,6 @@ CanvasRenderer:
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1747979486
 =======
-<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 1588915351}
   m_CullTransparentMesh: 0
@@ -12317,12 +13578,15 @@ CanvasRenderer:
 --- !u!1 &1589689169
 >>>>>>> parent of 0a4b7d2... update
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   m_GameObject: {fileID: 1588915351}
   m_CullTransparentMesh: 0
 --- !u!1 &1589689169
 >>>>>>> parent of 0a4b7d2... update
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
 GameObject:
@@ -12342,9 +13606,6 @@ GameObject:
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 0a4b7d2... update
 =======
 >>>>>>> parent of 0a4b7d2... update
   - component: {fileID: 1589689170}
@@ -12368,9 +13629,12 @@ GameObject:
 =======
 >>>>>>> parent of 0a4b7d2... update
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 0a4b7d2... update
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
   m_TagString: Untagged
@@ -12381,7 +13645,6 @@ GameObject:
 <<<<<<< HEAD
 --- !u!4 &1747979487
 =======
-<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!4 &1589689170
@@ -12395,10 +13658,13 @@ GameObject:
 --- !u!4 &1589689170
 >>>>>>> parent of 0a4b7d2... update
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!4 &1589689170
 >>>>>>> parent of 0a4b7d2... update
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
 Transform:
@@ -12414,9 +13680,6 @@ Transform:
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 0a4b7d2... update
 =======
 >>>>>>> parent of 0a4b7d2... update
   m_GameObject: {fileID: 1589689169}
@@ -12522,9 +13785,6 @@ Transform:
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 0a4b7d2... update
 =======
 >>>>>>> parent of 0a4b7d2... update
   m_GameObject: {fileID: 1608318031}
@@ -14640,9 +15900,12 @@ Rigidbody:
 =======
 >>>>>>> parent of 0a4b7d2... update
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 0a4b7d2... update
 >>>>>>> parent of d8929f0... Revert "Update Tutorial.unity"
+=======
+>>>>>>> parent of e356736... Update Tutorial.unity
 =======
 >>>>>>> parent of e356736... Update Tutorial.unity
   m_ObjectHideFlags: 0
@@ -14786,7 +16049,6 @@ MeshFilter:
   m_GameObject: {fileID: 2061090550}
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -14831,7 +16093,6 @@ GameObject:
   m_GameObject: {fileID: 2061090550}
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32b5bbcb4be71461ebef98671514bcd5, type: 3}
@@ -14862,8 +16123,6 @@ MonoBehaviour:
 Transform:
 =======
   m_GameObject: {fileID: 2061090550}
-=======
->>>>>>> parent of 0a4b7d2... update
 =======
 >>>>>>> parent of 0a4b7d2... update
 =======
