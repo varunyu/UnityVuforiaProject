@@ -12,18 +12,13 @@ public class DDAS : MonoBehaviour
     [SerializeField]
     private float[] movementData;
 
-    [SerializeField]
-    private float[] overallTimeData;
-
     private float tmp_Authoring_Time;
     private float tmp_Editing_Time;
     private float tmp_Movemnet_Dis;
-    private float tmp_Overall_Time;
 
     private float total_Authoring_Time ;
     private float total_Editing_Time;
     private float total_Movemnet_Dis;
-    private float total_Overall_Time;
 
     [SerializeField]
     private GameObject scorePref;
@@ -49,26 +44,23 @@ public class DDAS : MonoBehaviour
     {
         timeData = new float[i,2];
         movementData = new float[i];
-        overallTimeData = new float[i];
         total_Editing_Time = 0;
         total_Movemnet_Dis = 0;
         total_Authoring_Time = 0;
-        total_Overall_Time = 0;
        //index = 0;
         //count = i;
     }
 
-    public void SaveTrialData(float author_time, float edit_time, float move_dis, int index, float overallTime)
+    public void SaveTrialData(float author_time, float edit_time, float move_dis,int index)
     {
         tmp_Authoring_Time = author_time;
         tmp_Editing_Time = edit_time;
         tmp_Movemnet_Dis = move_dis;
-        tmp_Overall_Time = overallTime;
 
         total_Authoring_Time += author_time;
         total_Editing_Time += edit_time;
         total_Movemnet_Dis += move_dis;
-        total_Overall_Time += overallTime;
+
 
 
         UpdateTotalScoreUI();
@@ -77,7 +69,6 @@ public class DDAS : MonoBehaviour
         timeData[index, 0] = tmp_Authoring_Time;
         timeData[index, 1] = tmp_Editing_Time;
         movementData[index] = tmp_Movemnet_Dis;
-        overallTimeData[index] = tmp_Overall_Time;
         //index++;
         /*
         if (index==count)
@@ -93,7 +84,6 @@ public class DDAS : MonoBehaviour
         tmpTotalScore.transform.GetChild(1).GetComponent<Text>().text = total_Authoring_Time.ToString("F2") + " s";
         tmpTotalScore.transform.GetChild(2).GetComponent<Text>().text =  total_Editing_Time.ToString("F2") + " s";
         tmpTotalScore.transform.GetChild(3).GetComponent<Text>().text = total_Movemnet_Dis.ToString("F2") + " cm";
-        tmpTotalScore.transform.GetChild(4).GetComponent<Text>().text = total_Overall_Time.ToString("F2") + " cm";
     }
     private GameObject tmpTrialScore;
     private void AddNewScoringUI(int index)
@@ -103,7 +93,6 @@ public class DDAS : MonoBehaviour
         tmpTrialScore.transform.GetChild(1).GetComponent<Text>().text = tmp_Authoring_Time.ToString("F2") + " s";
         tmpTrialScore.transform.GetChild(2).GetComponent<Text>().text = tmp_Editing_Time.ToString("F2") + " s";
         tmpTrialScore.transform.GetChild(3).GetComponent<Text>().text = tmp_Movemnet_Dis.ToString("F2") + " cm";
-        tmpTrialScore.transform.GetChild(4).GetComponent<Text>().text = tmp_Overall_Time.ToString("F2") + " cm";
     }
 
     public void UploadDataToInternet()
