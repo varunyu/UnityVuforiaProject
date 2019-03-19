@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0403ce42c258a463da3173a93d6dd2be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectScale: 0.013
+  objectScale: 0.01
   initialScale: {x: 0, y: 0, z: 0}
   cam: {fileID: 0}
 --- !u!65 &1885939685989225758

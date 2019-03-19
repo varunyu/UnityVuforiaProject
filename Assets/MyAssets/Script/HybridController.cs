@@ -328,7 +328,7 @@ public class HybridController : MonoBehaviour {
     public void LockPosition(bool t)
     {
         lockPosition = t;
-        if (!t)
+        if (!t && sObject!=null)
         {
             rayDis = Vector3.Distance(Camera.main.ScreenToWorldPoint(crossHairObj.transform.position), sObject.transform.position);
         }

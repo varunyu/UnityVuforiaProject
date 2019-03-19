@@ -15313,6 +15313,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1594078872}
+    - target: {fileID: 1968513900241043070, guid: 057bb5c56c62e482496042dcd4981962,
+        type: 3}
+      propertyPath: objectScale
+      value: 0.013
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 057bb5c56c62e482496042dcd4981962, type: 3}
 --- !u!1001 &6298337991767274072
