@@ -27,13 +27,14 @@ public class DestroyContactObject : MonoBehaviour
             {
                 Destroy(colliderObject);
                 colliderObject = null;
+                this.gameObject.SetActive(false);
             }
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("HITTT");
+        //Debug.Log("HITTT");
         isCollider = true;
         colliderObject = collision.gameObject;
     }
