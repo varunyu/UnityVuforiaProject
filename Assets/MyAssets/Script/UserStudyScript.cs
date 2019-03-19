@@ -18,6 +18,8 @@ public class UserStudyScript: MonoBehaviour
     private float authoringModeTimer;
 
     private float deviceMovementDistance =0f;
+    private float overallTime;
+
 
     public GameObject SlidARPP;
     public GameObject Hybrid;
@@ -181,7 +183,7 @@ public class UserStudyScript: MonoBehaviour
                 {
                     TimeOut();
                 }
-
+                overallTime += Time.deltaTime;
                 MeasureDeviceMovement();
 
             }
@@ -189,6 +191,7 @@ public class UserStudyScript: MonoBehaviour
             {
                 authoringModeTimer += Time.deltaTime;
                 authoring_Mode_timerText.GetComponent<Text>().text = authoringModeTimer.ToString("F2") + " S";
+                overallTime += Time.deltaTime;
             }
         }
     }
@@ -299,6 +302,7 @@ public class UserStudyScript: MonoBehaviour
         deviceMovementDistance = 0f;
         isFirstTimeCall = true;
         authoringModeTimer = 0f;
+        overallTime = 0f;
     }
 
     public void TargetObjectIsAlignedWithAnnotation()
@@ -311,6 +315,7 @@ public class UserStudyScript: MonoBehaviour
         deviceMovementDistance = 0f;
         isFirstTimeCall = true;
         authoringModeTimer = 0f;
+        overallTime = 0f;
         EnableEditModeTimer(false);
         /*
         count++;
@@ -349,7 +354,7 @@ public class UserStudyScript: MonoBehaviour
 
     private void SaveCurrentData()
     {
-        dDAS.SaveTrialData(authoringModeTimer, editModeTimer, deviceMovementDistance,count);
+        dDAS.SaveTrialData(authoringModeTimer, editModeTimer, deviceMovementDistance,count,overallTime);
     }
     
 
