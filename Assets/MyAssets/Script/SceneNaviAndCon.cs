@@ -26,6 +26,24 @@ public class SceneNaviAndCon : MonoBehaviour
         SceneManager.LoadScene(name);
     }
 
+    public void RestartARCamera()
+    {
+        loadingPannel.SetActive(true);
+        if (Camera.main.enabled)
+        {
+            if(Camera.main.GetComponent<VuforiaBehaviour>() != null)
+            {
+                Camera.main.GetComponent<VuforiaBehaviour>().enabled = false;
+            }
+        }
+        Invoke("DeactiveLoadingPannel", 1.5f);
+
+        if (Camera.main.GetComponent<VuforiaBehaviour>() != null)
+        {
+            Camera.main.GetComponent<VuforiaBehaviour>().enabled = true;
+        }
+    }
+
     public void RestartTracking()
     {
         TrackerManager.Instance.GetTracker<ObjectTracker>().Stop();

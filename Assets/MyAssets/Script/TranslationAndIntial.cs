@@ -11,10 +11,19 @@ public class TranslationAndIntial : MonoBehaviour {
     private Transform emptyTran;
     public GameObject[] preFabList;
     private int preFabIndex =0;
+    private int stage;
+
 
 	void Awake(){
         //ARKitHitScript = (ARKitHitCheck)gameObject.GetComponent(typeof(ARKitHitCheck));
-        var stage = PlayerPrefs.GetInt("WorldCoor");
+        if (PlayerPrefs.HasKey("WorldCoor"))
+        {
+            stage = PlayerPrefs.GetInt("WorldCoor");
+        }
+        else
+        {
+            stage = 0;
+        }
         //Debug.Log("WorldCoordi "+ stage);
 
         if (stage == 1)
@@ -47,12 +56,12 @@ public class TranslationAndIntial : MonoBehaviour {
 
     public GameObject ObjectInstantiate(Touch t,GameObject prefab){
 		//emptyTran = ARKitHitScript.HitLoc (t);
-		return (Instantiate (prefab, GetPosFrom2DTouch(t), worldCoordinate.transform.rotation, parentObject.transform));
+		return (Instantiate (prefab, GetPosFrom2DTouchToMarker(t), worldCoordinate.transform.rotation, parentObject.transform));
 	}
 
     public GameObject ObjectInstantiate(Touch t)
     {
-        return (Instantiate(preFabList[preFabIndex], GetPosFrom2DTouch(t), worldCoordinate.transform.rotation, parentObject.transform));
+        return (Instantiate(preFabList[preFabIndex], GetPosFrom2DTouchToMarker(t), worldCoordinate.transform.rotation, parentObject.transform));
     }
 
     [SerializeField]
@@ -81,6 +90,12 @@ public class TranslationAndIntial : MonoBehaviour {
     {
         ray = Camera.main.ScreenPointToRay(t.position);
         return ray.GetPoint(R);
+    }
+
+    public Vector3 GetPosFrom2DTouchToMarker(Touch t)
+    {
+        ray = Camera.main.ScreenPointToRay(t.position);
+        return ray.GetPoint(Vector3.Distance(Camera.main.transform.position,parentObject.transform.position));
     }
 
     public void DebugObjectCreation()

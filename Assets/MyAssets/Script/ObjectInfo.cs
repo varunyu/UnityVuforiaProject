@@ -9,6 +9,9 @@ public class ObjectInfo : MonoBehaviour {
 	private Vector3 initPos;
 	private string text;
 
+    [SerializeField]
+    private bool ScalingOrNot = true;
+
     //Scale Relative To Cam
 
     public float objectScale = 0.01f;
@@ -27,11 +30,16 @@ public class ObjectInfo : MonoBehaviour {
         
     }
 	
+
+
 	// Update is called once per frame
 	void Update () {
-        plane = new Plane(cam.transform.forward, cam.transform.position);
-        float dist = plane.GetDistanceToPoint(transform.position);
-        transform.localScale = initialScale * dist * objectScale;
+        if (ScalingOrNot)
+        {
+            plane = new Plane(cam.transform.forward, cam.transform.position);
+            float dist = plane.GetDistanceToPoint(transform.position);
+            transform.localScale = initialScale * dist * objectScale;
+        }
     }
 
 	public Vector3 GetInitCam(){
